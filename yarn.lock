@@ -1677,6 +1677,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pathflip@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "pathflip@workspace:."
+  dependencies:
+    "@biomejs/biome": "npm:1.5.0"
+    "@jonahsnider/prettier-config": "npm:1.1.2"
+    "@tsconfig/node20": "npm:20.1.2"
+    "@tsconfig/strictest": "npm:2.0.2"
+    "@types/node": "npm:20.10.8"
+    "@vitest/coverage-v8": "npm:1.1.3"
+    prettier: "npm:3.1.1"
+    tsx: "npm:4.7.0"
+    typescript: "npm:5.3.3"
+    vitest: "npm:1.1.3"
+  languageName: unknown
+  linkType: soft
+
 "pathval@npm:^1.1.1":
   version: 1.1.1
   resolution: "pathval@npm:1.1.1"
@@ -2158,23 +2175,6 @@ __metadata:
   checksum: 8fb9a51d3f365a7de84ab7f73b653534b61b622aa6800aecdb0f1095a4a646d3f5eb295322127b6573db7982afcd40ab492d038cf825a42093a58b1e1353e0bd
   languageName: node
   linkType: hard
-
-"typescript-starter@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "typescript-starter@workspace:."
-  dependencies:
-    "@biomejs/biome": "npm:1.5.0"
-    "@jonahsnider/prettier-config": "npm:1.1.2"
-    "@tsconfig/node20": "npm:20.1.2"
-    "@tsconfig/strictest": "npm:2.0.2"
-    "@types/node": "npm:20.10.8"
-    "@vitest/coverage-v8": "npm:1.1.3"
-    prettier: "npm:3.1.1"
-    tsx: "npm:4.7.0"
-    typescript: "npm:5.3.3"
-    vitest: "npm:1.1.3"
-  languageName: unknown
-  linkType: soft
 
 "typescript@npm:5.3.3":
   version: 5.3.3
