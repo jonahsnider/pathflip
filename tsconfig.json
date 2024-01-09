@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"exactOptionalPropertyTypes": false,
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"outDir": "dist",
+		"resolveJsonModule": true
+	},
+	"exclude": ["node_modules", "coverage", "src/**/*.test.ts"],
+	"extends": ["@tsconfig/strictest", "@tsconfig/node20"],
+	"include": ["src"]
+}
