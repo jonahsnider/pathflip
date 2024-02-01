@@ -1,8 +1,7 @@
-/**
- * Says hello world.
- * @param subject - What the subject of the message is.
- * @returns Hello world message
- */
-export function helloWorld(subject?: string): string {
-	return `Hello, ${subject ?? 'world'}.`;
+import { runCli } from './cli/cli.js';
+
+const success = await runCli();
+
+if (!success) {
+	process.exit(1);
 }

@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 15.157798072683407,
+        "y": 1.0190734328868039
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 13.217411837659927,
+        "y": 0.9448376710549565
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.403875718684855,
+        "y": 0.7134059308635405
+      },
+      "prevControl": {
+        "x": 9.475763261245364,
+        "y": 0.7753080141818776
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "midbottom"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Red steal all",
+  "previewStartingState": {
+    "rotation": 0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": false
+}
