@@ -3,41 +3,41 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.1054166379587826,
-        "y": 6.394869498241021
+        "x": 13.080272392026265,
+        "y": 2.0536899453428545
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.105416637958785,
-        "y": 5.894869498241021
+        "x": 14.080272392026268,
+        "y": 1.5536899453428545
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 5.0,
-        "y": 5.0
+        "x": 11.73967005804382,
+        "y": 3.31709258788888
       },
       "prevControl": {
-        "x": 4.0,
-        "y": 6.0
+        "x": 12.375082902943584,
+        "y": 1.9273793732772657
       },
       "nextControl": {
-        "x": 6.0,
-        "y": 4.0
+        "x": 11.151608647416131,
+        "y": 4.603243347843016
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 7.0,
-        "y": 1.0
+        "x": 12.680140452873498,
+        "y": 6.76910648265741
       },
       "prevControl": {
-        "x": 6.75,
-        "y": 2.5
+        "x": 12.430140452873498,
+        "y": 8.269106482657394
       },
       "nextControl": null,
       "isLocked": false,
@@ -59,7 +59,7 @@
     "rotateFast": false
   },
   "reversed": false,
-  "folder": null,
+  "folder": "Red 7 piece top",
   "previewStartingState": null,
   "useDefaultConstraints": false
 }

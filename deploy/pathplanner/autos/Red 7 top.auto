@@ -1,0 +1,43 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 2,
+      "y": 2
+    },
+    "rotation": 0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Red 7 top 1"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Red 7 top 1"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Red 7 top 3"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Red 7 top 4"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "Red",
+  "choreoAuto": false
+}

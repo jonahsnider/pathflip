@@ -1,0 +1,65 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 13.080272392026265,
+        "y": 2.0536899453428545
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 14.080272392026268,
+        "y": 1.5536899453428545
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 11.73967005804382,
+        "y": 3.31709258788888
+      },
+      "prevControl": {
+        "x": 12.375082902943584,
+        "y": 1.9273793732772657
+      },
+      "nextControl": {
+        "x": 11.151608647416131,
+        "y": 4.603243347843016
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 13.080272392026265,
+        "y": 6.606155749348536
+      },
+      "prevControl": {
+        "x": 12.830272392026265,
+        "y": 8.10615574934852
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Red 7 piece top",
+  "previewStartingState": null,
+  "useDefaultConstraints": false
+}
