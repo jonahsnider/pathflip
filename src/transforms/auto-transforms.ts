@@ -32,8 +32,9 @@ export function transformAuto(auto: AutoEntry, transform: TransformRequest): Aut
 
 	output.paths = output.paths.map((path) => transformPath(path, transform));
 
-	if (output.dir) {
-		output.dir = transformName(output.dir, transform);
+	if (output.parsed.folder) {
+		output.parsed.folder = transformName(output.parsed.folder, transform);
+		output.dir = output.parsed.folder;
 	}
 
 	output.filepath = join(dirname(output.filepath), transformName(basename(output.filepath), transform));

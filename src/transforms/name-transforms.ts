@@ -1,14 +1,25 @@
 import { TransformRequest } from './transform-request.js';
 
 export function transformName(name: string, transform: TransformRequest): string {
-	let transformed: string | undefined;
+	let transformed = name;
+
 	switch (transform.color) {
 		case 'blue2red': {
-			transformed = name.replaceAll(/blue/gi, (found) => (found === 'blue' ? 'red' : 'Red'));
+			transformed = transformed.replaceAll(/blue/gi, (found) => (found === 'blue' ? 'red' : 'Red'));
 			break;
 		}
 		case 'red2blue': {
-			transformed = name.replaceAll(/red/gi, (found) => (found === 'red' ? 'blue' : 'Blue'));
+			transformed = transformed.replaceAll(/red/gi, (found) => (found === 'red' ? 'blue' : 'Blue'));
+			break;
+		}
+	}
+	switch (transform.vertical) {
+		case 'bottom2top': {
+			transformed = transformed.replaceAll(/bottom/gi, (found) => (found === 'bottom' ? 'top' : 'Top'));
+			break;
+		}
+		case 'top2bottom': {
+			transformed = transformed.replaceAll(/top/gi, (found) => (found === 'top' ? 'bottom' : 'Bottom'));
 			break;
 		}
 	}

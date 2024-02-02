@@ -81,5 +81,9 @@ export function transformPath(input: PathEntry, transform: TransformRequest): Pa
 
 	output.filepath = join(dirname(output.filepath), transformName(basename(output.filepath), transform));
 
+	if (path.folder) {
+		path.folder = transformName(path.folder, transform);
+	}
+
 	return output;
 }

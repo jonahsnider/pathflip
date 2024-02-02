@@ -1,5 +1,5 @@
 import { listAutos } from '../autos/autos.js';
-import { transformAutos } from '../transforms/transforms.js';
+import { transformAutos, transformSettingsAndFlush } from '../transforms/transforms.js';
 import { afterTransformApproved } from './steps/after-transform.js';
 import { cancelledOverwriteConfirm } from './steps/cancelled-overwrite-confirm.js';
 import { cancelledAutoSelect } from './steps/cancelled-path-select.js';
@@ -58,6 +58,8 @@ export async function runCli(): Promise<boolean> {
 			return true;
 		}
 	}
+
+	await transformSettingsAndFlush(projectDir, output);
 
 	await afterTransformApproved(output);
 
