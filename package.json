@@ -21,6 +21,7 @@
 	"scripts": {
 		"build": "rm -rf dist && tsc",
 		"lint": "biome check ./src/",
+		"release": "semantic-release",
 		"lint:fix": "biome check ./src/ --apply-unsafe",
 		"start": "node ."
 	},
@@ -35,6 +36,7 @@
 		"@tsconfig/node20": "20.1.2",
 		"@tsconfig/strictest": "2.0.2",
 		"@types/node": "20.10.8",
+		"semantic-release": "23.0.0",
 		"typescript": "5.3.3"
 	},
 	"packageManager": "yarn@4.0.2"

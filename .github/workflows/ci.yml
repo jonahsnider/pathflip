@@ -18,8 +18,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'yarn'
+          node-version: "20"
+          cache: "yarn"
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Build
@@ -39,9 +39,37 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'yarn'
+          node-version: "20"
+          cache: "yarn"
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Lint
         run: yarn run lint
+  release:
+    name: Release
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    needs: [build, lint]
+
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v4
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "yarn"
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
+      - name: Build package
+        run: yarn run build
+      - name: Release
+        run: yarn run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
