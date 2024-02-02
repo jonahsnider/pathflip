@@ -1,93 +1,43 @@
-import { groupMultiselect, isCancel, multiselect, select } from '@clack/prompts';
-import { PathEntryFile } from '../../paths/paths.js';
-import { GroupMultiSelectOption, GroupMultiSelectOptions } from '../clack-utils.js';
+import { groupMultiselect, isCancel } from '@clack/prompts';
 import { DefaultMap } from '@jonahsnider/util';
-import { FIELD_HEIGHT, FIELD_LENGTH } from '../../constants.js';
 
-type ColorTransform = 'red2blue' | 'blue2red';
-type VerticalTransform = 'top2bottom' | 'bottom2top';
+import { AutoEntry } from '../../autos/autos.js';
+import { AutoWithTransforms, getAllowedTransforms } from '../../transforms/auto-transforms.js';
+import { GroupMultiSelectOption, GroupMultiSelectOptions } from '../clack-utils.js';
 
-export type TransformRequest = {
-	color: ColorTransform | undefined;
-	vertical: VerticalTransform | undefined;
-};
+function getTransformsOptions(auto: AutoEntry): GroupMultiSelectOption<AutoWithTransforms> {
+	const allowedTransforms = getAllowedTransforms(auto);
 
-export type PathWithTransforms = {
-	path: PathEntryFile;
-	transform: TransformRequest;
-};
-
-function possiblePathTransforms(path: PathEntryFile): GroupMultiSelectOption<PathWithTransforms> {
-	const [firstPoint] = path.parsed.waypoints;
-
-	if (!firstPoint) {
-		return [];
-	}
-
-	const { anchor } = firstPoint;
-
-	const result: GroupMultiSelectOption<PathWithTransforms> = [];
-
-	if (anchor.x > FIELD_LENGTH / 2) {
-		result.push({
-			value: {
-				path,
-				transform: {
-					color: 'red2blue',
-					vertical: undefined,
+	return allowedTransforms.map((transform) => {
+		if (transform.color) {
+			return {
+				value: {
+					auto,
+					transform,
 				},
-			},
-			label: 'Red to blue',
-		});
-	} else {
-		result.push({
-			value: {
-				path,
-				transform: {
-					color: 'blue2red',
-					vertical: undefined,
-				},
-			},
-			label: 'Blue to red',
-		});
-	}
+				label: transform.color === 'red2blue' ? 'Red to blue' : 'Blue to red',
+			};
+		}
 
-	if (anchor.y > FIELD_HEIGHT / 2) {
-		result.push({
+		return {
 			value: {
-				path,
-				transform: {
-					color: undefined,
-					vertical: 'top2bottom',
-				},
+				auto,
+				transform,
 			},
-			label: 'Top to bottom',
-		});
-	} else {
-		result.push({
-			value: {
-				path,
-				transform: {
-					color: undefined,
-					vertical: 'bottom2top',
-				},
-			},
-			label: 'Bottom to top',
-		});
-	}
-
-	return result;
+			label: transform.vertical === 'top2bottom' ? 'Top to bottom' : 'Bottom to top',
+		};
+	});
 }
 
-export async function selectTransforms(paths: readonly PathEntryFile[]): Promise<PathWithTransforms[] | undefined> {
-	const optionsEntries = paths.map((path) => [path.nameWithDir, possiblePathTransforms(path)] as const);
+export async function selectTransforms(autos: readonly AutoEntry[]): Promise<AutoWithTransforms[] | undefined> {
+	const optionsEntries = autos.map((auto) => [auto.nameWithDir, getTransformsOptions(auto)] as const);
 
 	optionsEntries.sort(([a], [b]) => a.localeCompare(b));
 
-	const options: GroupMultiSelectOptions<PathWithTransforms> = Object.fromEntries(optionsEntries);
+	const options: GroupMultiSelectOptions<AutoWithTransforms> = Object.fromEntries(optionsEntries);
 
 	const _rawSelections = await groupMultiselect({
-		message: 'Select what transforms to apply to each path',
+		message: `Which transforms should be applied to the ${autos.length === 1 ? 'auto' : 'autos'}?`,
 		options,
 		required: true,
 	});
@@ -96,11 +46,11 @@ export async function selectTransforms(paths: readonly PathEntryFile[]): Promise
 		return undefined;
 	}
 
-	const rawSelections = _rawSelections as PathWithTransforms[];
+	const rawSelections = _rawSelections as AutoWithTransforms[];
 
-	const selections = new DefaultMap<PathEntryFile, PathWithTransforms>(
-		(path): PathWithTransforms => ({
-			path,
+	const selections = new DefaultMap<AutoEntry, AutoWithTransforms>(
+		(auto): AutoWithTransforms => ({
+			auto,
 			transform: {
 				color: undefined,
 				vertical: undefined,
@@ -109,7 +59,7 @@ export async function selectTransforms(paths: readonly PathEntryFile[]): Promise
 	);
 
 	for (const selection of rawSelections) {
-		const existing = selections.get(selection.path);
+		const existing = selections.get(selection.auto);
 
 		if (selection.transform.color) {
 			existing.transform.color = selection.transform.color;
@@ -119,7 +69,7 @@ export async function selectTransforms(paths: readonly PathEntryFile[]): Promise
 			existing.transform.vertical = selection.transform.vertical;
 		}
 
-		selections.set(selection.path, existing);
+		selections.set(selection.auto, existing);
 	}
 
 	return [...selections.values()];

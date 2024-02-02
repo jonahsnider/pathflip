@@ -1,54 +1,65 @@
-import { groupMultiselect, log } from '@clack/prompts';
-import { PATHS_DIR_MISSING, flattenPathTree, listPaths } from '../paths/paths.js';
-import { cancelledPathSelect } from './steps/cancelled-path-select.js';
-import { confirmProjectDir } from './steps/confirm-project-dir.js';
-import { incorrectProjectDir } from './steps/incorrect-project-dir.js';
-import { runIntro } from './steps/intro.js';
-import { noPathsDir } from './steps/no-paths-dir.js';
-import { noPathsInDir } from './steps/no-paths-in-dir.js';
-import { selectPaths } from './steps/select-paths.js';
-import { selectTransforms } from './steps/select-transforms.js';
+import { listAutos } from '../autos/autos.js';
+import { transformAutos } from '../transforms/transforms.js';
+import { afterTransformApproved } from './steps/after-transform.js';
+import { cancelledOverwriteConfirm } from './steps/cancelled-overwrite-confirm.js';
+import { cancelledAutoSelect } from './steps/cancelled-path-select.js';
 import { cancelledTransformSelect } from './steps/cancelled-transform-select.js';
+import { confirmOverwrite } from './steps/confirm-overwrite.js';
+import { runIntro } from './steps/intro.js';
+import { noAutosDir } from './steps/no-paths-dir.js';
+import { noAutosInDir } from './steps/no-paths-in-dir.js';
+import { rejectedOverwrite } from './steps/rejected-overwrite.js';
+import { selectAutos } from './steps/select-autos.js';
+import { selectTransforms } from './steps/select-transforms.js';
 
 export async function runCli(): Promise<boolean> {
 	runIntro();
 
-	const projectDir = await confirmProjectDir();
+	const projectDir = process.cwd();
 
-	if (!projectDir) {
-		incorrectProjectDir();
+	const allAutos = await listAutos(projectDir);
+
+	if (!allAutos) {
+		noAutosDir();
 		return false;
 	}
 
-	const allPaths = await listPaths(projectDir);
-
-	if (allPaths === PATHS_DIR_MISSING) {
-		noPathsDir();
+	if (allAutos.length === 0) {
+		noAutosInDir();
 		return false;
 	}
 
-	const flattenedPathTree = flattenPathTree(allPaths);
+	const selectedAutos = await selectAutos(allAutos);
 
-	if (flattenedPathTree.length === 0) {
-		noPathsInDir();
+	if (!selectedAutos) {
+		cancelledAutoSelect();
 		return false;
 	}
 
-	const selectedPaths = await selectPaths(flattenedPathTree);
-
-	if (!selectedPaths) {
-		cancelledPathSelect();
-		return false;
-	}
-
-	const transforms = await selectTransforms(selectedPaths);
+	const transforms = await selectTransforms(selectedAutos);
 
 	if (!transforms) {
 		cancelledTransformSelect();
 		return false;
 	}
 
-	console.log(transforms);
+	const { existingAutos, existingPaths, output } = await transformAutos(transforms);
+
+	if (existingAutos.length > 0 || existingPaths.size > 0) {
+		const overwriteApproved = await confirmOverwrite(selectedAutos, existingAutos, existingPaths);
+
+		if (overwriteApproved === undefined) {
+			cancelledOverwriteConfirm();
+			return false;
+		}
+
+		if (!overwriteApproved) {
+			rejectedOverwrite();
+			return true;
+		}
+	}
+
+	await afterTransformApproved(output);
 
 	return true;
 }

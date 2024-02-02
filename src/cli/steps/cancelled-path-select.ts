@@ -1,5 +1,5 @@
 import { log } from '@clack/prompts';
 
-export function cancelledPathSelect(): void {
-	log.error('Cancelled path selection');
+export function cancelledAutoSelect(): void {
+	log.error('Cancelled auto selection');
 }

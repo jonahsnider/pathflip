@@ -1,5 +1,5 @@
-import { log, outro } from '@clack/prompts';
+import { log } from '@clack/prompts';
 
-export function noPathsInDir(): void {
-	log.error('There are no paths in the paths directory');
+export function noAutosInDir(): void {
+	log.error('There are no autos in the autos directory');
 }
