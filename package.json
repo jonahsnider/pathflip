@@ -1,11 +1,6 @@
 {
 	"name": "pathflip",
 	"version": "0.0.0-development",
-	"description": "A tool for FRC teams that use PathPlanner.",
-	"keywords": [
-		"frc",
-		"pathplanner"
-	],
 	"bugs": {
 		"url": "https://github.com/jonahsnider/pathflip/issues"
 	},
@@ -27,10 +22,16 @@
 		"build": "rm -rf dist && tsc",
 		"lint": "biome check ./src/",
 		"lint:fix": "biome check ./src/ --apply-unsafe",
-		"style": "prettier --check .",
-		"start": "node ."
+		"start": "node .",
+		"style": "prettier --check ."
 	},
 	"prettier": "@jonahsnider/prettier-config",
+	"dependencies": {
+		"@clack/prompts": "0.7.0",
+		"@jonahsnider/util": "10.3.0",
+		"is-unicode-supported": "2.0.0",
+		"path-exists": "5.0.0"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "1.5.0",
 		"@jonahsnider/prettier-config": "1.1.2",
@@ -40,11 +41,5 @@
 		"prettier": "3.1.1",
 		"typescript": "5.3.3"
 	},
-	"packageManager": "yarn@4.0.2",
-	"dependencies": {
-		"@clack/prompts": "0.7.0",
-		"@jonahsnider/util": "10.3.0",
-		"is-unicode-supported": "2.0.0",
-		"path-exists": "5.0.0"
-	}
+	"packageManager": "yarn@4.0.2"
 }
