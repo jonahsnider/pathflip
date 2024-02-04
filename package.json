@@ -21,21 +21,23 @@
 	"scripts": {
 		"build": "rm -rf dist && tsc",
 		"lint": "biome check ./src/",
-		"release": "semantic-release",
 		"lint:fix": "biome check ./src/ --apply-unsafe",
+		"release": "semantic-release",
 		"start": "node ."
 	},
 	"dependencies": {
 		"@clack/prompts": "0.7.0",
 		"@jonahsnider/util": "10.3.0",
 		"is-unicode-supported": "2.0.0",
-		"path-exists": "5.0.0"
+		"path-exists": "5.0.0",
+		"update-notifier": "7.0.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.5.3",
 		"@tsconfig/node20": "20.1.2",
 		"@tsconfig/strictest": "2.0.2",
 		"@types/node": "20.11.16",
+		"@types/update-notifier": "6.0.8",
 		"semantic-release": "23.0.0",
 		"typescript": "5.3.3"
 	},
