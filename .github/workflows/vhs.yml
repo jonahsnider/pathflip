@@ -28,7 +28,6 @@ jobs:
         uses: charmbracelet/vhs-action@v1
         with:
           path: 'docs/demo.tape'
-          install-fonts: true
       - name: Extract branch name
         shell: bash
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
