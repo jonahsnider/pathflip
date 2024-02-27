@@ -22,7 +22,6 @@
 		"build": "rm -rf dist && tsc",
 		"lint": "biome check ./src/",
 		"lint:fix": "biome check ./src/ --apply-unsafe",
-		"release": "semantic-release",
 		"start": "node ."
 	},
 	"dependencies": {
@@ -38,7 +37,6 @@
 		"@tsconfig/strictest": "2.0.3",
 		"@types/node": "20.11.20",
 		"@types/update-notifier": "6.0.8",
-		"semantic-release": "23.0.2",
 		"typescript": "5.3.3"
 	},
 	"packageManager": "yarn@4.1.0"
