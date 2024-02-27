@@ -1,3 +1,4 @@
+import { multiReplace } from '@jonahsnider/util';
 import { TransformRequest } from './transform-request.js';
 
 export function transformName(name: string, transform: TransformRequest): string {
@@ -5,21 +6,37 @@ export function transformName(name: string, transform: TransformRequest): string
 
 	switch (transform.color) {
 		case 'blue2red': {
-			transformed = transformed.replaceAll(/blue/gi, (found) => (found === 'blue' ? 'red' : 'Red'));
+			transformed = multiReplace(transformed, {
+				blue: 'red',
+				// biome-ignore lint/style/useNamingConvention: This has to be uppercase
+				Blue: 'Red',
+			});
 			break;
 		}
 		case 'red2blue': {
-			transformed = transformed.replaceAll(/red/gi, (found) => (found === 'red' ? 'blue' : 'Blue'));
+			transformed = multiReplace(transformed, {
+				red: 'blue',
+				// biome-ignore lint/style/useNamingConvention: This has to be uppercase
+				Red: 'Blue',
+			});
 			break;
 		}
 	}
 	switch (transform.vertical) {
 		case 'bottom2top': {
-			transformed = transformed.replaceAll(/bottom/gi, (found) => (found === 'bottom' ? 'top' : 'Top'));
+			transformed = multiReplace(transformed, {
+				bottom: 'top',
+				// biome-ignore lint/style/useNamingConvention: This has to be uppercase
+				Bottom: 'Top',
+			});
 			break;
 		}
 		case 'top2bottom': {
-			transformed = transformed.replaceAll(/top/gi, (found) => (found === 'top' ? 'bottom' : 'Bottom'));
+			transformed = multiReplace(transformed, {
+				top: 'bottom',
+				// biome-ignore lint/style/useNamingConvention: This has to be uppercase
+				Top: 'Bottom',
+			});
 			break;
 		}
 	}
