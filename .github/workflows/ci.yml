@@ -45,3 +45,44 @@ jobs:
         run: yarn install --immutable
       - name: Lint
         run: yarn run lint
+  vhs:
+    name: Update VHS recordings
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v4
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "yarn"
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
+      - name: Build
+        run: yarn run build
+      - name: Setup global Pathflip
+        run: alias pathflip="yarn start"
+      - name: Generate VHS GIF
+        uses: charmbracelet/vhs-action@v1
+        with:
+          path: "docs/vhs.tape"
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          commit_message: "docs: update generated VHS GIF"
+          branch: ${{ steps.extract_branch.outputs.branch }}
+          commit_user_name: vhs-action 📼
+          commit_user_email: actions@github.com
+          commit_author: vhs-action 📼 <actions@github.com>
+          file_pattern: "docs/demo.gif"
