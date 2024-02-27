@@ -69,9 +69,7 @@ jobs:
       - name: Setup global Pathflip
         run: alias pathflip="yarn start"
       - name: Install VHS
-        uses: charmbracelet/vhs-action@v1
-        with:
-          path: ""
+        run: go install github.com/charmbracelet/vhs@latest
       - name: Run VHS
         run: vhs docs/demo.tape
       - name: Extract branch name
