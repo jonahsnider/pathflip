@@ -72,6 +72,10 @@ jobs:
         uses: actions/setup-go@v5
       - name: Install VHS
         run: go install github.com/charmbracelet/vhs@latest
+      - name: Install FFmpeg
+        uses: FedericoCarboni/setup-ffmpeg@v3
+        with:
+          ffmpeg-version: release
       - name: Run VHS
         run: vhs docs/demo.tape
       - name: Extract branch name
