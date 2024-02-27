@@ -68,10 +68,10 @@ jobs:
         run: yarn run build
       - name: Setup global Pathflip
         run: alias pathflip="yarn start"
-      - name: Generate VHS GIF
+      - name: Install VHS
         uses: charmbracelet/vhs-action@v1
-        with:
-          path: "./docs/vhs.tape"
+      - name: Run VHS
+        run: vhs docs/demo.tape
       - name: Extract branch name
         shell: bash
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
