@@ -57,12 +57,12 @@
 
 Output docs/demo.gif
 
-Require pathflip
-
 Set Shell bash
 
 Hide
 Type@0 "export NODE_NO_WARNINGS=1"
+Enter
+Type@0 "alias pathflip='yarn start'"
 Enter
 Type@0 "clear"
 Enter
