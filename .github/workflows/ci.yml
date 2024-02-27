@@ -69,7 +69,9 @@ jobs:
       - name: Setup global Pathflip
         run: alias pathflip="yarn start"
       - name: Install VHS
-        run: go install github.com/charmbracelet/vhs@latest
+        run: |
+          go install github.com/charmbracelet/vhs@latest
+          export PATH=${PATH}:`go env GOPATH`/bin
       - name: Run VHS
         run: vhs docs/demo.tape
       - name: Extract branch name
