@@ -24,18 +24,10 @@ jobs:
         run: yarn install --immutable
       - name: Build
         run: yarn run build
-      - name: Setup Go
-        uses: actions/setup-go@v5
-      - name: Install VHS
-        run: go install github.com/charmbracelet/vhs@latest
-      - name: Install FFmpeg
-        uses: FedericoCarboni/setup-ffmpeg@v3
+      - name: Record VHS GIF
+        uses: charmbracelet/vhs-action@v1
         with:
-          ffmpeg-version: release
-      - name: Install ttyd
-        run: sudo snap install ttyd --classic
-      - name: Run VHS
-        run: vhs docs/demo.tape
+          path: '../../docs/vhs.tape'
       - name: Extract branch name
         shell: bash
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
