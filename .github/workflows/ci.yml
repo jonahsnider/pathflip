@@ -71,7 +71,7 @@ jobs:
       - name: Generate VHS GIF
         uses: charmbracelet/vhs-action@v1
         with:
-          path: "docs/vhs.tape"
+          path: "./docs/vhs.tape"
       - name: Extract branch name
         shell: bash
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
