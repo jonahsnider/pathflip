@@ -31,6 +31,10 @@ jobs:
         # a new release is created:
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
+        if : ${{ steps.release.outputs.release_created }}
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -38,11 +42,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           cache: yarn
         if: ${{ steps.release.outputs.release_created }}
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "lts/*"
-          registry-url: "https://registry.npmjs.org"
       - name: Install dependencies with Yarn
         if: ${{ steps.release.outputs.release_created }}
         run: yarn install --immutable
