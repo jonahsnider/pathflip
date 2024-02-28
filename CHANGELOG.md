@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/jonahsnider/pathflip/compare/v1.1.2...v1.1.3) (2024-02-28)
+
+
+### Bug Fixes
+
+* trigger release ([7dd4325](https://github.com/jonahsnider/pathflip/commit/7dd4325db245e5f243d14f22a46d7cad2b873221))
+
 ## [1.1.2](https://github.com/jonahsnider/pathflip/compare/v1.1.1...v1.1.2) (2024-02-28)
 
 
