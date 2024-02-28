@@ -669,7 +669,7 @@ __metadata:
     typescript: "npm:5.3.3"
     update-notifier: "npm:7.0.0"
   bin:
-    pathflip: ./dist/src/index.js
+    pathflip: dist/src/index.js
   languageName: unknown
   linkType: soft
 

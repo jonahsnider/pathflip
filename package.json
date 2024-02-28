@@ -16,9 +16,7 @@
 	},
 	"type": "module",
 	"main": "./dist/src/index.js",
-	"bin": {
-		"pathflip": "dist/src/index.js"
-	},
+	"bin": "dist/src/index.js",
 	"files": [
 		"dist"
 	],
