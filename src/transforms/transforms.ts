@@ -36,7 +36,7 @@ export async function transformSettingsAndFlush(projectDir: string, transformedA
 		const stringified = JSON.stringify(transformedSettings, null, 2);
 
 		// Workaround for https://github.com/mjansen4857/pathplanner/issues/588
-		const patched = stringified.replaceAll(/\s\d+,/gm, (value) => ` ${value.slice(' '.length, -','.length)}.0,`);
+		const patched = stringified.replaceAll(/\s\d+,$/gm, (value) => ` ${value.slice(' '.length, -','.length)}.0,`);
 
 		await fs.writeFile(path.join(projectDir, '.pathplanner', 'settings.json'), patched);
 	}
