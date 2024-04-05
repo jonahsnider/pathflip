@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/jonahsnider/pathflip/compare/v1.1.3...v1.1.4) (2024-04-05)
+
+
+### Bug Fixes
+
+* fix regular expression for formatting numbers in settings JSON ([f48f84c](https://github.com/jonahsnider/pathflip/commit/f48f84c3ca26988de69fd52d6069b4dc37eca140))
+
 ## [1.1.3](https://github.com/jonahsnider/pathflip/compare/v1.1.2...v1.1.3) (2024-02-28)
 
 
