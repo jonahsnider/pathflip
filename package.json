@@ -28,7 +28,7 @@
 	},
 	"dependencies": {
 		"@clack/prompts": "0.7.0",
-		"@jonahsnider/util": "10.3.0",
+		"@jonahsnider/util": "11.0.0",
 		"is-unicode-supported": "2.0.0",
 		"path-exists": "5.0.0",
 		"update-notifier": "7.0.0"
