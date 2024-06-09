@@ -70,7 +70,7 @@ Show
 
 Type "pathflip"
 
-Sleep 0.25s
+Sleep 0.5s
 Enter@1s
 
 Space@0.5s
