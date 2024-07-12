@@ -31,7 +31,7 @@
 		"@jonahsnider/util": "11.0.0",
 		"is-unicode-supported": "2.0.0",
 		"path-exists": "5.0.0",
-		"update-notifier": "7.0.0"
+		"update-notifier": "7.1.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.5.3",
