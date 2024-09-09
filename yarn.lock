@@ -248,19 +248,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"boxen@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "boxen@npm:8.0.0"
+"boxen@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "boxen@npm:8.0.1"
   dependencies:
     ansi-align: "npm:^3.0.1"
     camelcase: "npm:^8.0.0"
     chalk: "npm:^5.3.0"
-    cli-boxes: "npm:^4.0.0"
+    cli-boxes: "npm:^3.0.0"
     string-width: "npm:^7.2.0"
     type-fest: "npm:^4.21.0"
     widest-line: "npm:^5.0.0"
     wrap-ansi: "npm:^9.0.0"
-  checksum: 10c0/8a45b03a12d6767740d69fcb57629ddbc0f9f968aa9f62e9289d7950adfec6e5d314abd7a353b0b97bd2186411ee740598b03d719593b41a09bdeb94a1747825
+  checksum: 10c0/8c54f9797bf59eec0b44c9043d9cb5d5b2783dc673e4650235e43a5155c43334e78ec189fd410cf92056c1054aee3758279809deed115b49e68f1a1c6b3faa32
   languageName: node
   linkType: hard
 
@@ -289,13 +289,6 @@ __metadata:
   version: 3.0.0
   resolution: "cli-boxes@npm:3.0.0"
   checksum: 10c0/4db3e8fbfaf1aac4fb3a6cbe5a2d3fa048bee741a45371b906439b9ffc821c6e626b0f108bdcd3ddf126a4a319409aedcf39a0730573ff050fdd7b6731e99fb9
-  languageName: node
-  linkType: hard
-
-"cli-boxes@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "cli-boxes@npm:4.0.0"
-  checksum: 10c0/a03e31c715c81184cd19bd27844d1c9c316becca312341ed14be8a4e1422fbf69718a4ea2be452a4f810fdb0229d75df9eadacea659d8c4919b092850d520de8
   languageName: node
   linkType: hard
 
@@ -526,7 +519,7 @@ __metadata:
     is-unicode-supported: "npm:2.1.0"
     path-exists: "npm:5.0.0"
     typescript: "npm:5.6.2"
-    update-notifier: "npm:7.3.0"
+    update-notifier: "npm:7.3.1"
   bin:
     pathflip: dist/src/index.js
   languageName: unknown
@@ -718,11 +711,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"update-notifier@npm:7.3.0":
-  version: 7.3.0
-  resolution: "update-notifier@npm:7.3.0"
+"update-notifier@npm:7.3.1":
+  version: 7.3.1
+  resolution: "update-notifier@npm:7.3.1"
   dependencies:
-    boxen: "npm:^8.0.0"
+    boxen: "npm:^8.0.1"
     chalk: "npm:^5.3.0"
     configstore: "npm:^7.0.0"
     is-in-ci: "npm:^1.0.0"
@@ -732,7 +725,7 @@ __metadata:
     pupa: "npm:^3.1.0"
     semver: "npm:^7.6.3"
     xdg-basedir: "npm:^5.1.0"
-  checksum: 10c0/d51d508b118f39835ca13d864ecfed3339ea3c18d97b402eff9193fa5a9e2681b035ec34771f218967441640c3bbd4df19bb1e7d892c3d1ac2588619b586c7ea
+  checksum: 10c0/678839453840f46bb75e8cfebc0ff522262d2d3ece343fca722dd506039832e2a952d14ae39153f05f684467c8293ebc4c6479c9652c1bf97908fcaf300c2b31
   languageName: node
   linkType: hard
 
