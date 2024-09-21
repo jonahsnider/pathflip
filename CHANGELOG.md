@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/jonahsnider/pathflip/compare/v1.1.4...v2.0.0) (2024-09-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* support Choreo ([#13](https://github.com/jonahsnider/pathflip/issues/13))
+
+### Features
+
+* support Choreo ([#13](https://github.com/jonahsnider/pathflip/issues/13)) ([e20da48](https://github.com/jonahsnider/pathflip/commit/e20da48f7c4ada1283e685d30ee487a638209012))
+
 ## [1.1.4](https://github.com/jonahsnider/pathflip/compare/v1.1.3...v1.1.4) (2024-04-05)
 
 
