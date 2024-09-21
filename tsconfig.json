@@ -4,12 +4,14 @@
 		"inlineSourceMap": true,
 		"inlineSources": true,
 		"module": "NodeNext",
+		"target": "ESNext",
+		"lib": ["ESNext"],
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"outDir": "dist",
 		"resolveJsonModule": true
 	},
 	"exclude": ["node_modules", "coverage", "src/**/*.test.ts"],
-	"extends": ["@tsconfig/strictest", "@tsconfig/node20"],
+	"extends": ["@tsconfig/strictest", "@tsconfig/node22"],
 	"include": ["src"]
 }

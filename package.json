@@ -22,24 +22,27 @@
 	],
 	"scripts": {
 		"build": "rm -rf dist && tsc",
-		"lint": "biome check ./src/",
-		"lint:fix": "biome check ./src/ --apply-unsafe",
+		"lint": "biome check .",
+		"lint:fix": "biome check . --write --unsafe",
 		"start": "node ."
 	},
 	"dependencies": {
 		"@clack/prompts": "0.7.0",
 		"@jonahsnider/util": "11.0.0",
-		"is-unicode-supported": "2.1.0",
 		"path-exists": "5.0.0",
+		"picocolors": "1.1.0",
 		"update-notifier": "7.3.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.5.3",
-		"@tsconfig/node20": "20.1.4",
+		"@biomejs/biome": "1.9.2",
+		"@tsconfig/node22": "22.0.0",
 		"@tsconfig/strictest": "2.0.5",
-		"@types/node": "20.11.20",
+		"@types/node": "22.5.5",
 		"@types/update-notifier": "6.0.8",
 		"typescript": "5.6.2"
 	},
-	"packageManager": "yarn@4.5.0"
+	"packageManager": "yarn@4.5.0",
+	"engines": {
+		"node": ">=22.0.0"
+	}
 }

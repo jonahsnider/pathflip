@@ -73,7 +73,8 @@ Type "pathflip"
 Sleep 0.5s
 Enter@1s
 
-Space@0.5s
+Down@0.25s 4
+Space@0.75s
 Enter@1s
 
 Down@0.5s
