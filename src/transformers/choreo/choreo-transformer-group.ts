@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import path from 'node:path';
+import type { ChoreoPathSelection } from '../../cli/steps/3/select-paths.js';
 import type { ChoreoTransformSelection, TransformRequest } from '../../cli/steps/4/select-transforms.js';
 import { loadChoreoSettings, writeChoreoSettings } from '../../common/choreo/fs.js';
 import type { ChoreoSettings } from '../../common/choreo/types.js';
@@ -18,7 +19,7 @@ export class ChoreoTransformerGroup extends TransformerGroup<ChoreoTransformSele
 	private static readonly VERTICAL_TRANSFORMER = new ChoreoVerticalTransformer();
 	private static readonly TRANSFORMERS = [this.COLOR_TRANSFORMER, this.VERTICAL_TRANSFORMER];
 
-	protected override async loadContext(paths: ChoreoTransformSelection['path'][]): Promise<Context> {
+	protected override async loadContext(paths: ChoreoPathSelection[]): Promise<Context> {
 		const fileNames = new Set(paths.map((path) => path.settingsFilePath));
 
 		return {
