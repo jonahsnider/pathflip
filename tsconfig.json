@@ -13,5 +13,5 @@
 	},
 	"exclude": ["node_modules", "coverage", "src/**/*.test.ts"],
 	"extends": ["@tsconfig/strictest", "@tsconfig/node22"],
-	"include": ["src"]
+	"include": ["src", "test"]
 }
