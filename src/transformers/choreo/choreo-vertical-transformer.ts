@@ -6,6 +6,7 @@ import type {
 } from '../../cli/steps/4/select-transforms.js';
 import type { ChoreoPath, ChoreoSettings } from '../../common/choreo/types.js';
 import { FIELD_HEIGHT } from '../../common/constants.js';
+import { angleModulusRadians } from '../../common/math-util.js';
 import { renamePath } from '../renamer.js';
 import { Transformer } from '../transformer.js';
 
@@ -25,7 +26,7 @@ export class ChoreoVerticalTransformer extends Transformer<ChoreoTransformSelect
 		let result = rotationRad;
 
 		result *= -1;
-		result %= 2 * Math.PI;
+		result = angleModulusRadians(result);
 
 		return result;
 	}

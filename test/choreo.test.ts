@@ -5,7 +5,7 @@ import type { ChoreoPathSelection } from '../src/cli/steps/3/select-paths.js';
 import { choreoTransformer } from '../src/transformers/transformers.js';
 
 describe('Choreo transforms', () => {
-	test.fails('generates headings bounded by -180 and 180', async () => {
+	test('generates headings bounded by -180 and 180', async () => {
 		const choreoPath: ChoreoPathSelection = {
 			kind: 'choreo',
 			settingsFilePath: path.join(import.meta.dirname, 'fixtures', 'choreo1.chor'),

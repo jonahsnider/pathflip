@@ -6,6 +6,7 @@ import type {
 	TransformSelection,
 } from '../../cli/steps/4/select-transforms.js';
 import { FIELD_HEIGHT } from '../../common/constants.js';
+import { angleModulusDegrees } from '../../common/math-util.js';
 import type { PathPlannerPath, PathPlannerPathPoint } from '../../common/path-planner/types.js';
 import { renamePath } from '../renamer.js';
 import { Transformer } from '../transformer.js';
@@ -27,7 +28,7 @@ export class PathPlannerVerticalTransformer extends Transformer<PathPlannerTrans
 		let result = rotationDeg;
 
 		result *= -1;
-		result %= 360;
+		result = angleModulusDegrees(result);
 
 		return result;
 	}
