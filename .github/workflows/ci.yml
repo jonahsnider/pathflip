@@ -45,3 +45,24 @@ jobs:
         run: yarn install --immutable
       - name: Lint
         run: yarn run lint
+  test:
+    name: Run tests
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v4
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "yarn"
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
+      - name: Run tests
+        run: yarn run test
