@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/jonahsnider/pathflip/compare/v2.0.0...v2.0.1) (2024-09-23)
+
+
+### Bug Fixes
+
+* fix headings in Choreo causing unnecessary rotations ([#15](https://github.com/jonahsnider/pathflip/issues/15)) ([f08eae4](https://github.com/jonahsnider/pathflip/commit/f08eae4175235dc8951f767e3223a8a257b2715b))
+
 ## [2.0.0](https://github.com/jonahsnider/pathflip/compare/v1.1.4...v2.0.0) (2024-09-21)
 
 
