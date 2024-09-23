@@ -6,6 +6,7 @@ import type {
 } from '../../cli/steps/4/select-transforms.js';
 import type { ChoreoPath, ChoreoSettings } from '../../common/choreo/types.js';
 import { FIELD_LENGTH } from '../../common/constants.js';
+import { angleModulusRadians } from '../../common/math-util.js';
 import { renamePath } from '../renamer.js';
 import { Transformer } from '../transformer.js';
 
@@ -24,16 +25,16 @@ export class ChoreoColorTransformer extends Transformer<ChoreoTransformSelection
 
 		switch (transform.color) {
 			case 'red2blue': {
-				result = -result + Math.PI;
-				result %= 2 * Math.PI;
+				result += Math.PI;
 				break;
 			}
 			case 'blue2red': {
-				result = -result - Math.PI;
-				result %= 2 * Math.PI;
+				result -= Math.PI;
 				break;
 			}
 		}
+
+		result = angleModulusRadians(result);
 
 		return result;
 	}

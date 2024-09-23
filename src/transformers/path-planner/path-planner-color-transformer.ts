@@ -6,6 +6,7 @@ import type {
 	TransformSelection,
 } from '../../cli/steps/4/select-transforms.js';
 import { FIELD_LENGTH } from '../../common/constants.js';
+import { angleModulusDegrees } from '../../common/math-util.js';
 import type { PathPlannerPath, PathPlannerPathPoint } from '../../common/path-planner/types.js';
 import { renamePath } from '../renamer.js';
 import { Transformer } from '../transformer.js';
@@ -26,16 +27,16 @@ export class PathPlannerColorTransformer extends Transformer<PathPlannerTransfor
 
 		switch (transform.color) {
 			case 'red2blue': {
-				result = -result + 180;
-				result %= 360;
+				result += 180;
 				break;
 			}
 			case 'blue2red': {
-				result = -result - 180;
-				result %= 360;
+				result -= 180;
 				break;
 			}
 		}
+
+		result = angleModulusDegrees(result);
 
 		return result;
 	}
