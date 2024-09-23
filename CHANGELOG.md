@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/jonahsnider/pathflip/compare/v2.0.1...v2.0.2) (2024-09-23)
+
+
+### Bug Fixes
+
+* add warning about Node.js version on v20 ([1b76db4](https://github.com/jonahsnider/pathflip/commit/1b76db47de54422f6d2260ded7c75696c801fce6))
+
 ## [2.0.1](https://github.com/jonahsnider/pathflip/compare/v2.0.0...v2.0.1) (2024-09-23)
 
 
