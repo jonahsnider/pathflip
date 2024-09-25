@@ -25,10 +25,12 @@ export class ChoreoColorTransformer extends Transformer<ChoreoTransformSelection
 
 		switch (transform.color) {
 			case 'red2blue': {
+				result *= -1;
 				result += Math.PI;
 				break;
 			}
 			case 'blue2red': {
+				result *= -1;
 				result -= Math.PI;
 				break;
 			}

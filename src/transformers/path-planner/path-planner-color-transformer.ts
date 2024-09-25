@@ -27,10 +27,12 @@ export class PathPlannerColorTransformer extends Transformer<PathPlannerTransfor
 
 		switch (transform.color) {
 			case 'red2blue': {
+				result *= -1;
 				result += 180;
 				break;
 			}
 			case 'blue2red': {
+				result *= -1;
 				result -= 180;
 				break;
 			}

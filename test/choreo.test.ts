@@ -33,6 +33,6 @@ describe('Choreo transforms', () => {
 		assert(outputPath);
 
 		// biome-ignore lint/style/noUnusedTemplateLiteral: This is a test snapshot
-		expect(outputPath.waypoints[0]?.heading).toMatchInlineSnapshot(`2.9063772775412318`);
+		expect(outputPath.waypoints[0]?.heading).toMatchInlineSnapshot(`-2.9063772775412318`);
 	});
 });
