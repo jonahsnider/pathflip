@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/jonahsnider/pathflip/compare/v2.0.2...v2.0.3) (2024-09-25)
+
+
+### Bug Fixes
+
+* angle normalization for Choreo ([3541fd9](https://github.com/jonahsnider/pathflip/commit/3541fd9c0857e06a5d67e7637f1b5e551032f2f5))
+
 ## [2.0.2](https://github.com/jonahsnider/pathflip/compare/v2.0.1...v2.0.2) (2024-09-23)
 
 
