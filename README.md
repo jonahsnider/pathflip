@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/jonahsnider/pathflip/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jonahsnider/pathflip/actions/workflows/ci.yml)
 
-Pathflip is a CLI tool for FRC teams that use PathPlanner for building autonomous routine paths.
+Pathflip is a CLI tool for FRC teams that use PathPlanner or Choreo for building autonomous routine paths.
 
 You can create & tune a path for one side of the field (ex. red), and can use Pathflip to mirror the path to the other side (ex. blue).
 
