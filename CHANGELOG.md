@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.5](https://github.com/jonahsnider/pathflip/compare/v2.0.4...v2.0.5) (2024-09-25)
+
+
+### Bug Fixes
+
+* fix -pi angles not being normalized to pi in Choreo ([d43b7a1](https://github.com/jonahsnider/pathflip/commit/d43b7a17ea81f0cba9d98c4464e079ff653d3592))
+
 ## [2.0.4](https://github.com/jonahsnider/pathflip/compare/v2.0.3...v2.0.4) (2024-09-25)
 
 
