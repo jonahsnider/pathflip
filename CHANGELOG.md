@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.4](https://github.com/jonahsnider/pathflip/compare/v2.0.3...v2.0.4) (2024-09-25)
+
+
+### Bug Fixes
+
+* fix headings facing wrong side after color transform ([e3ee148](https://github.com/jonahsnider/pathflip/commit/e3ee148f870000629b6d2b8ffa821d4fb7ddf892))
+
 ## [2.0.3](https://github.com/jonahsnider/pathflip/compare/v2.0.2...v2.0.3) (2024-09-25)
 
 
