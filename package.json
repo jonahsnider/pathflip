@@ -32,7 +32,7 @@
 		"@clack/prompts": "0.7.0",
 		"@jonahsnider/util": "11.0.0",
 		"path-exists": "5.0.0",
-		"picocolors": "1.1.0",
+		"picocolors": "1.1.1",
 		"update-notifier": "7.3.1"
 	},
 	"devDependencies": {
