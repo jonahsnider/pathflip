@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.6](https://github.com/jonahsnider/pathflip/compare/v2.0.5...v2.0.6) (2024-11-03)
+
+
+### Bug Fixes
+
+* fix transformed PathPlanner paths having angles in radians instead of degrees ([998680e](https://github.com/jonahsnider/pathflip/commit/998680e5f654f95b742dd51aed534e59b87b6f3c))
+
 ## [2.0.5](https://github.com/jonahsnider/pathflip/compare/v2.0.4...v2.0.5) (2024-09-25)
 
 
