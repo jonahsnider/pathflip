@@ -12,5 +12,5 @@ export function angleModulusRadians(angle: number): number {
 }
 
 export function angleModulusDegrees(angle: number): number {
-	return angleModulusRadians((angle / 180) * Math.PI);
+	return angleModulusRadians((angle / 180) * Math.PI) * (180 / Math.PI);
 }
