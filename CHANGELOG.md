@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.7](https://github.com/jonahsnider/pathflip/compare/v2.0.6...v2.0.7) (2024-11-08)
+
+
+### Bug Fixes
+
+* fix project file scan failing if no PathPlanner paths are detected ([9c441a5](https://github.com/jonahsnider/pathflip/commit/9c441a56d11c0e0823b2a22054652237f6bd8be4))
+
 ## [2.0.6](https://github.com/jonahsnider/pathflip/compare/v2.0.5...v2.0.6) (2024-11-03)
 
 
