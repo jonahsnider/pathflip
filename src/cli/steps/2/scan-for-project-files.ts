@@ -18,7 +18,7 @@ export async function scanForProjectFiles(): Promise<ProjectFilesScanResult> {
 		scanForChoreoProjectFiles(projectDir),
 	]);
 
-	if (!pathPlannerPaths || choreoPaths.settingsFilePaths.length === 0) {
+	if (!pathPlannerPaths && choreoPaths.settingsFilePaths.length === 0) {
 		cancel('No PathPlanner or Choreo files were found in the project, are you in the right directory?');
 		process.exit(1);
 	}
