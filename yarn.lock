@@ -96,7 +96,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clack/core@npm:^0.3.3":
+"@clack/core@npm:0.3.4":
   version: 0.3.4
   resolution: "@clack/core@npm:0.3.4"
   dependencies:
@@ -106,15 +106,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clack/prompts@npm:0.7.0":
-  version: 0.7.0
-  resolution: "@clack/prompts@npm:0.7.0"
+"@clack/prompts@npm:0.8.1":
+  version: 0.8.1
+  resolution: "@clack/prompts@npm:0.8.1"
   dependencies:
-    "@clack/core": "npm:^0.3.3"
+    "@clack/core": "npm:0.3.4"
     is-unicode-supported: "npm:*"
     picocolors: "npm:^1.0.0"
     sisteransi: "npm:^1.0.5"
-  checksum: 10c0/fecb3b34308c5cb75807211b28d50caa4b0c5d150d16e733e59bfba3187ac856f050ed44baeca90eb99e047671096ff54402dd2790e9c0e77845a75b04003e2e
+  checksum: 10c0/7d97c66cafafbc6e2d9c2a13034904b8b7626d3af93e6e0487b648e95f8068372b7ea2e4b6a045fa4b55b310db0ce84f969197fb57da91b040505d395cf70d9e
   languageName: node
   linkType: hard
 
@@ -1638,7 +1638,7 @@ __metadata:
   resolution: "pathflip@workspace:."
   dependencies:
     "@biomejs/biome": "npm:1.9.4"
-    "@clack/prompts": "npm:0.7.0"
+    "@clack/prompts": "npm:0.8.1"
     "@jonahsnider/util": "npm:11.0.0"
     "@tsconfig/node22": "npm:22.0.0"
     "@tsconfig/strictest": "npm:2.0.5"
