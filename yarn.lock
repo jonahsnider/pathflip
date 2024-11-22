@@ -96,25 +96,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clack/core@npm:0.3.4":
-  version: 0.3.4
-  resolution: "@clack/core@npm:0.3.4"
+"@clack/core@npm:0.3.5":
+  version: 0.3.5
+  resolution: "@clack/core@npm:0.3.5"
   dependencies:
     picocolors: "npm:^1.0.0"
     sisteransi: "npm:^1.0.5"
-  checksum: 10c0/2531c18885da676510c339b94906e2071bce538c6ea14c36df425d99de2bdb8fe317f9795461811fc6fe233bb3e653b030a3975eb1da9997cac09dcd53f43068
+  checksum: 10c0/b1037226b38696bd95e09beef789ff4e23abb282505ac233c0316c2410c8afb68cf91b67812c883f05ffa6943d6f0593f1ebc17beb94f4a42c13e4657f598c0b
   languageName: node
   linkType: hard
 
-"@clack/prompts@npm:0.8.1":
-  version: 0.8.1
-  resolution: "@clack/prompts@npm:0.8.1"
+"@clack/prompts@npm:0.8.2":
+  version: 0.8.2
+  resolution: "@clack/prompts@npm:0.8.2"
   dependencies:
-    "@clack/core": "npm:0.3.4"
-    is-unicode-supported: "npm:*"
+    "@clack/core": "npm:0.3.5"
     picocolors: "npm:^1.0.0"
     sisteransi: "npm:^1.0.5"
-  checksum: 10c0/7d97c66cafafbc6e2d9c2a13034904b8b7626d3af93e6e0487b648e95f8068372b7ea2e4b6a045fa4b55b310db0ce84f969197fb57da91b040505d395cf70d9e
+  checksum: 10c0/7ac6e7e0fba1c958847e6e3ef9415d9c2184fb424b31691aaef64fd06042d243e859c157b941ca1c9f73e9cb649413fab487a602b981e300acfbec4a111d7562
   languageName: node
   linkType: hard
 
@@ -1302,13 +1301,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-unicode-supported@npm:*":
-  version: 2.1.0
-  resolution: "is-unicode-supported@npm:2.1.0"
-  checksum: 10c0/a0f53e9a7c1fdbcf2d2ef6e40d4736fdffff1c9f8944c75e15425118ff3610172c87bf7bc6c34d3903b04be59790bb2212ddbe21ee65b5a97030fc50370545a5
-  languageName: node
-  linkType: hard
-
 "isexe@npm:^2.0.0":
   version: 2.0.0
   resolution: "isexe@npm:2.0.0"
@@ -1638,7 +1630,7 @@ __metadata:
   resolution: "pathflip@workspace:."
   dependencies:
     "@biomejs/biome": "npm:1.9.4"
-    "@clack/prompts": "npm:0.8.1"
+    "@clack/prompts": "npm:0.8.2"
     "@jonahsnider/util": "npm:11.0.0"
     "@tsconfig/node22": "npm:22.0.0"
     "@tsconfig/strictest": "npm:2.0.5"
