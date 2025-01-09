@@ -96,24 +96,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clack/core@npm:0.4.0":
-  version: 0.4.0
-  resolution: "@clack/core@npm:0.4.0"
+"@clack/core@npm:0.4.1":
+  version: 0.4.1
+  resolution: "@clack/core@npm:0.4.1"
   dependencies:
     picocolors: "npm:^1.0.0"
     sisteransi: "npm:^1.0.5"
-  checksum: 10c0/757d7c122ff7f69c540a92f434886def632025eb7190c202e166ae74f354f6eac243c9d7d46b74a205de6968d6cdce627a14c165c0a40ed73ae11405966dde70
+  checksum: 10c0/60c59e2d0017ce81567566c4f2a288f1738ef6356e25d9c56055be68aa449f75b6a7271b32c335213eb3a7af4b02db90de88c6999c432f09ca00c3d8004ea95b
   languageName: node
   linkType: hard
 
-"@clack/prompts@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@clack/prompts@npm:0.9.0"
+"@clack/prompts@npm:0.9.1":
+  version: 0.9.1
+  resolution: "@clack/prompts@npm:0.9.1"
   dependencies:
-    "@clack/core": "npm:0.4.0"
+    "@clack/core": "npm:0.4.1"
     picocolors: "npm:^1.0.0"
     sisteransi: "npm:^1.0.5"
-  checksum: 10c0/a43a17757cc6cb9c1612b009a05426d386694afad6390e8e9aaa37210b77cfaa8e6f9f99ec36c97613d14bd2b3eec6f25c14b5617afdaa049220c51586d38a2f
+  checksum: 10c0/6cda9f56963dcbbfca4d9a64c82cf57e7f00dd563cd9e9ad28973b10ac761723fc21453254effbf08d5862efd57bad41d48008316c345202b74035ae905329cf
   languageName: node
   linkType: hard
 
@@ -1637,7 +1637,7 @@ __metadata:
   resolution: "pathflip@workspace:."
   dependencies:
     "@biomejs/biome": "npm:1.9.4"
-    "@clack/prompts": "npm:0.9.0"
+    "@clack/prompts": "npm:0.9.1"
     "@jonahsnider/util": "npm:11.0.0"
     "@tsconfig/node22": "npm:22.0.0"
     "@tsconfig/strictest": "npm:2.0.5"
