@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/jonahsnider/pathflip/compare/v2.0.7...v3.0.0) (2025-01-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* PathPlanner 2024 is no longer supported
+
+### Features
+
+* support PathPlanner 2025 ([62de10d](https://github.com/jonahsnider/pathflip/commit/62de10da4ea2dcc56cde4092eff5ed0aba2878ab))
+
 ## [2.0.7](https://github.com/jonahsnider/pathflip/compare/v2.0.6...v2.0.7) (2024-11-08)
 
 
