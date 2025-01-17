@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 2.6162817853413483,
+        "y": 7.220071449402158
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.6162817853413447,
+        "y": 6.720071449402158
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.81032994195618,
+        "y": 3.31709258788888
+      },
+      "prevControl": {
+        "x": 5.174917097056417,
+        "y": 1.9273793732772657
+      },
+      "nextControl": {
+        "x": 6.39839135258387,
+        "y": 4.603243347843016
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 4.869859547126502,
+        "y": 6.76910648265741
+      },
+      "prevControl": {
+        "x": 5.119859547126502,
+        "y": 8.269106482657394
+      },
+      "nextControl": {
+        "x": 4.619859547126502,
+        "y": 5.269106482657426
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.922348869697739,
+        "y": 2.1061263511415915
+      },
+      "prevControl": {
+        "x": 2.8027825402873017,
+        "y": 1.3392611877816436
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3,
+    "maxAcceleration": 3,
+    "maxAngularVelocity": 540,
+    "maxAngularAcceleration": 720
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 180,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Blue 7 piece amp",
+  "previewStartingState": null,
+  "useDefaultConstraints": false
+}

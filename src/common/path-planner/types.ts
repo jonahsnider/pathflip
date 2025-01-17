@@ -34,7 +34,7 @@ export type PathPlannerPathWaypoint = {
 );
 
 export type PathPlannerPath = {
-	version: 1.0;
+	version: '2025.0';
 	waypoints: PathPlannerPathWaypoint[];
 	rotationTargets: PathPlannerPathRotationTarget[];
 	goalEndState: PathPlannerPathGoalEndState;

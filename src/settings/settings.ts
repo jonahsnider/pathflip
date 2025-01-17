@@ -20,7 +20,7 @@ export type SettingsEntry = {
 };
 
 export async function parseSettings(projectDir: string): Promise<Settings> {
-	const file = await fs.readFile(join(projectDir, '.pathplanner', 'settings.json'), 'utf-8');
+	const file = await fs.readFile(join(projectDir, 'src', 'main', 'deploy', 'pathplanner', 'settings.json'), 'utf-8');
 
 	return JSON.parse(file) as Settings;
 }

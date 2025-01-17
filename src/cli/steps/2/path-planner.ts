@@ -11,7 +11,7 @@ export type PathPlannerProjectFilesPaths = {
 export async function scanForPathPlannerProjectFiles(
 	projectDir: string,
 ): Promise<PathPlannerProjectFilesPaths | undefined> {
-	const maybeSettingsPath = path.join(projectDir, '.pathplanner', 'settings.json');
+	const maybeSettingsPath = path.join(projectDir, 'src', 'main', 'deploy', 'pathplanner', 'settings.json');
 
 	// If the settings file isn't there, we can skip looking for paths
 	if (!(await pathExists(maybeSettingsPath))) {
