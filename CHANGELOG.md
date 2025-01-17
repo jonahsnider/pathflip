@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/jonahsnider/pathflip/compare/v3.0.0...v3.0.1) (2025-01-17)
+
+
+### Bug Fixes
+
+* bump version ([302bdf5](https://github.com/jonahsnider/pathflip/commit/302bdf527b0cb4b92f780805a04f27876d3e2b0c))
+
 ## [3.0.0](https://github.com/jonahsnider/pathflip/compare/v2.0.7...v3.0.0) (2025-01-17)
 
 
