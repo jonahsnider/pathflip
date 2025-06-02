@@ -42,7 +42,7 @@
 		"@types/node": "22.15.29",
 		"@types/update-notifier": "6.0.8",
 		"typescript": "5.8.3",
-		"vitest": "3.1.4"
+		"vitest": "3.2.0"
 	},
 	"packageManager": "yarn@4.9.1",
 	"engines": {
