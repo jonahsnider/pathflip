@@ -32,7 +32,6 @@ describe('Choreo transforms', () => {
 		const outputPath = outputSettings.paths['Blue CWS to 6'];
 		assert(outputPath);
 
-		// biome-ignore lint/style/noUnusedTemplateLiteral: This is a test snapshot
 		expect(outputPath.waypoints[0]?.heading).toMatchInlineSnapshot(`-2.9063772775412318`);
 	});
 });

@@ -4,7 +4,7 @@ import { DefaultMap, partition } from '@jonahsnider/util';
 import type { GroupMultiSelectOptions } from '../../clack-utils.js';
 import type { ProjectFilesScanResult } from '../2/scan-for-project-files.js';
 import { getAllChoreoPathNames } from './choreo.js';
-import { type PathPlannerPathNames, createPathNameLookup } from './path-planner.js';
+import { createPathNameLookup, type PathPlannerPathNames } from './path-planner.js';
 
 export type SelectedPaths = {
 	/** Maps path file name to path name. */
