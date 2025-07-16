@@ -8,7 +8,6 @@ export function renamePath(name: string, transformRequest: TransformRequest): st
 		case 'blue2red': {
 			transformed = multiReplace(transformed, {
 				blue: 'red',
-				// biome-ignore lint/style/useNamingConvention: This has to be uppercase
 				Blue: 'Red',
 			});
 			break;
@@ -16,7 +15,6 @@ export function renamePath(name: string, transformRequest: TransformRequest): st
 		case 'red2blue': {
 			transformed = multiReplace(transformed, {
 				red: 'blue',
-				// biome-ignore lint/style/useNamingConvention: This has to be uppercase
 				Red: 'Blue',
 			});
 			break;
@@ -26,7 +24,6 @@ export function renamePath(name: string, transformRequest: TransformRequest): st
 		case 'bottom2top': {
 			transformed = multiReplace(transformed, {
 				bottom: 'top',
-				// biome-ignore lint/style/useNamingConvention: This has to be uppercase
 				Bottom: 'Top',
 			});
 			break;
@@ -34,7 +31,6 @@ export function renamePath(name: string, transformRequest: TransformRequest): st
 		case 'top2bottom': {
 			transformed = multiReplace(transformed, {
 				top: 'bottom',
-				// biome-ignore lint/style/useNamingConvention: This has to be uppercase
 				Top: 'Bottom',
 			});
 			break;
