@@ -588,12 +588,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.18.12":
-  version: 22.18.12
-  resolution: "@types/node@npm:22.18.12"
+"@types/node@npm:22.19.1":
+  version: 22.19.1
+  resolution: "@types/node@npm:22.19.1"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10c0/13a4638f2baba3efba2b8bc369dd6f950dccbfca78f318f9c9f2c7adc11fce14fc119723c38567dada2d57a873c092b7356c024924d5974a08f3c1f93dc706c6
+  checksum: 10c0/6edd93aea86da740cb7872626839cd6f4a67a049d3a3a6639cb592c620ec591408a30989ab7410008d1a0b2d4985ce50f1e488e79c033e4476d3bec6833b0a2f
   languageName: node
   linkType: hard
 
@@ -1685,7 +1685,7 @@ __metadata:
     "@jonahsnider/util": "npm:12.0.0"
     "@tsconfig/node22": "npm:22.0.2"
     "@tsconfig/strictest": "npm:2.0.5"
-    "@types/node": "npm:22.18.12"
+    "@types/node": "npm:22.19.1"
     "@types/update-notifier": "npm:6.0.8"
     path-exists: "npm:5.0.0"
     picocolors: "npm:1.1.1"
