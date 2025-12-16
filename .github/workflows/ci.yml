@@ -60,8 +60,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          # TODO: Change back to lts/* once Node.js 22 is the main LTS candidate
-          node-version: "24.x"
+          node-version: "lts/*"
           cache: "yarn"
       - name: Install dependencies with Yarn
         run: yarn install --immutable
