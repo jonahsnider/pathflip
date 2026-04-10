@@ -4,14 +4,16 @@ package {
   name = "pathflip"
   baseUri = "package://github.com/jonahsnider/pathflip/pathflip"
   version = "4.0.0" // x-release-please-version
-  packageZipUrl = "https://github.com/jonahsnider/pathflip/releases/download/v\(version)/pathflip@\(version).zip"
+  packageZipUrl =
+    "https://github.com/jonahsnider/pathflip/releases/download/v\(version)/pathflip@\(version).zip"
   description = "Configuration schema for pathflip, an FRC autonomous path mirroring tool."
   license = "Apache-2.0"
   authors {
     "Jonah Snider <jonah@jonahsnider.com>"
   }
   sourceCode = "https://github.com/jonahsnider/pathflip"
-  sourceCodeUrlScheme = "https://github.com/jonahsnider/pathflip/blob/v\(version)%{path}#L%{line}-L%{endLine}"
+  sourceCodeUrlScheme =
+    "https://github.com/jonahsnider/pathflip/blob/v\(version)%{path}#L%{line}-L%{endLine}"
   issueTracker = "https://github.com/jonahsnider/pathflip/issues"
   exclude {
     "dist/**"
