@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.1.0](https://github.com/jonahsnider/pathflip/compare/pathflip@v4.0.3...pathflip@v4.1.0) (2026-04-10)
+
+
+### Features
+
+* add -v as alias for --version ([189cd08](https://github.com/jonahsnider/pathflip/commit/189cd088350991224ea0dfd1957cb2febb8360a1))
+
+
+### Bug Fixes
+
+* fix Pkl publishing ([d78af4b](https://github.com/jonahsnider/pathflip/commit/d78af4b70735ac3370a05ab6f75b9bf245faae66))
+* improve fs usage ([b564229](https://github.com/jonahsnider/pathflip/commit/b5642298595ac1bd0684b8d5c635f32f13f1da77))
+
 ## [4.0.3](https://github.com/jonahsnider/pathflip/compare/v4.0.2...v4.0.3) (2026-04-10)
 
 

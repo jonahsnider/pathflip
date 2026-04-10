@@ -37,7 +37,7 @@ Create a `pathflip.config.pkl` in your project root:
 <!-- x-release-please-start-version -->
 
 ```pkl
-amends "package://pkg.pkl-lang.org/github.com/jonahsnider/pathflip/pathflip@4.0.3#/src/config.pkl"
+amends "package://pkg.pkl-lang.org/github.com/jonahsnider/pathflip/pathflip@4.1.0#/src/config.pkl"
 
 fieldHeight = 8.069
 
