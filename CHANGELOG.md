@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/jonahsnider/pathflip/compare/v4.0.0...v4.0.1) (2026-04-10)
+
+
+### Bug Fixes
+
+* fix version release ([add60e5](https://github.com/jonahsnider/pathflip/commit/add60e54bdd1f0b212178a6996258282d0f4f1e9))
+
 ## [4.0.0](https://github.com/jonahsnider/pathflip/compare/pathflip-v3.0.1...pathflip-v4.0.0) (2026-04-10)
 
 
