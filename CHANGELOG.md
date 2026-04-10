@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.1](https://github.com/jonahsnider/pathflip/compare/pathflip@v4.1.0...pathflip@4.1.1) (2026-04-10)
+
+
+### Bug Fixes
+
+* stop including v in tag names ([04d4fac](https://github.com/jonahsnider/pathflip/commit/04d4fac9a922c428b3de2e722056443f7d16f70d))
+
 ## [4.1.0](https://github.com/jonahsnider/pathflip/compare/pathflip@v4.0.3...pathflip@v4.1.0) (2026-04-10)
 
 
