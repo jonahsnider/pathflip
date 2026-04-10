@@ -5,6 +5,7 @@
 		"inlineSources": true,
 		"module": "NodeNext",
 		"target": "ESNext",
+		"types": ["node"],
 		"lib": ["ESNext"],
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,

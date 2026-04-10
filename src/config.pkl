@@ -1,0 +1,31 @@
+/// Configuration for pathflip, an FRC autonomous path mirroring tool.
+///
+/// Usage:
+///
+/// ```pkl
+/// amends "package://github.com/jonahsnider/pathflip/pathflip@4.0.0#/src/config.pkl" // x-release-please-version
+///
+/// fieldHeight = 8.052
+///
+/// replacements {
+///   ["Left"] = "Right"
+///   ["Right"] = "Left"
+/// }
+///
+/// negateConstants {
+///   "kLeftOffset"
+///   "kRightOffset"
+/// }
+/// ```
+module pathflip.Config
+
+/// The height of the field in meters. Used to flip Y-coordinates in Pose2d constructors.
+fieldHeight: Float
+
+/// A mapping of string replacements to apply to the source code and file path.
+/// Each key is replaced with its corresponding value.
+replacements: Mapping<String, String>
+
+/// A list of constant names whose declared values should be negated.
+/// These should be `private static final double` declarations in the Java source.
+negateConstants: Listing<String>

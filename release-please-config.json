@@ -1,0 +1,17 @@
+{
+	"packages": {
+		".": {
+			"release-type": "node",
+			"extra-files": [
+				{
+					"type": "generic",
+					"path": "PklProject"
+				},
+				{
+					"type": "generic",
+					"path": "src/config.pkl"
+				}
+			]
+		}
+	}
+}
