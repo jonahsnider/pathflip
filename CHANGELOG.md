@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.3](https://github.com/jonahsnider/pathflip/compare/v4.0.2...v4.0.3) (2026-04-10)
+
+
+### Bug Fixes
+
+* fix config loading ([026d491](https://github.com/jonahsnider/pathflip/commit/026d4919f1376348fcbe93deba56bc1603600de7))
+* fix Pkl upload ([219ba6b](https://github.com/jonahsnider/pathflip/commit/219ba6bd05444d749a0502909089328c6e809abb))
+
 ## [4.0.2](https://github.com/jonahsnider/pathflip/compare/v4.0.1...v4.0.2) (2026-04-10)
 
 
