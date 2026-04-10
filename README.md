@@ -34,6 +34,8 @@ pathflip comp-bot/src/main/java/frc/robot/autos/auto_state_machines/RightIntegra
 
 Create a `pathflip.config.pkl` in your project root:
 
+<!-- x-release-please-start-version -->
+
 ```pkl
 amends "package://pkg.pkl-lang.org/github.com/jonahsnider/pathflip/pathflip@4.0.3#/src/config.pkl"
 
@@ -52,6 +54,8 @@ negateConstants {
   "BUMP_OFFSET"
 }
 ```
+
+<!-- x-release-please-end -->
 
 The `amends` line is optional but recommended — it provides type checking and editor support via the published [Pkl package](https://github.com/jonahsnider/pathflip).
 

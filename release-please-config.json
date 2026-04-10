@@ -12,6 +12,10 @@
 				{
 					"type": "generic",
 					"path": "src/config.pkl"
+				},
+				{
+					"type": "generic",
+					"path": "README.md"
 				}
 			]
 		}
