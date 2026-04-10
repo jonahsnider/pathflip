@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import * as fs from 'node:fs';
+import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import { multiReplace } from '@jonahsnider/util';
 import meow from 'meow';
@@ -47,13 +47,16 @@ if (!inputFile) {
 
 const inputPath = path.resolve(inputFile);
 
-if (!fs.existsSync(inputPath)) {
+let source: string;
+
+try {
+	source = await fs.readFile(inputPath, 'utf-8');
+} catch {
 	console.error(pc.red(`File not found: ${inputPath}`));
 	process.exit(1);
 }
 
 const config = await loadConfig(cli.flags.config, inputPath);
-const source = fs.readFileSync(inputPath, 'utf-8');
 const { output, warnings } = transform(source, config);
 
 for (const warning of warnings) {
@@ -69,8 +72,8 @@ if (outputPath === inputPath) {
 }
 
 // Ensure output directory exists
-fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-fs.writeFileSync(outputPath, output);
+await fs.mkdir(path.dirname(outputPath), { recursive: true });
+await fs.writeFile(outputPath, output);
 
 console.log(
 	`${pc.green('✔')} ${path.relative(process.cwd(), inputPath)} → ${path.relative(process.cwd(), outputPath)}`,
