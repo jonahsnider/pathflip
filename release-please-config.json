@@ -1,6 +1,7 @@
 {
 	"packages": {
 		".": {
+			"include-component-in-tag": false,
 			"release-type": "node",
 			"extra-files": [
 				{
