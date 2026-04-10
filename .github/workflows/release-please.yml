@@ -50,12 +50,12 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - name: Install Pkl CLI
         if: ${{ steps.release.outputs.release_created }}
-        run: |
-          curl -L -o pkl 'https://github.com/apple/pkl/releases/download/0.31.1/pkl-linux-amd64'
-          chmod +x pkl
+        uses: pkl-community/setup-pkl@v0
+        with:
+          pkl-version: 0.31.1
       - name: Build Pkl package
         if: ${{ steps.release.outputs.release_created }}
-        run: ./pkl project package --skip-publish-check
+        run: pkl project package --skip-publish-check
       - name: Upload Pkl package artifacts to release
         if: ${{ steps.release.outputs.release_created }}
         run: gh release upload "v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}" .out/*
