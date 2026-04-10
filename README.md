@@ -27,7 +27,7 @@ pathflip <input-file> [--config path]
 ### Example
 
 ```sh
-pathflip src/main/java/com/team581/autos/RightIntegratedAuto.java
+pathflip comp-bot/src/main/java/frc/robot/autos/auto_state_machines/RightIntegratedAuto.java
 ```
 
 ## Config
