@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.2](https://github.com/jonahsnider/pathflip/compare/pathflip@4.1.1...pathflip@4.1.2) (2026-04-10)
+
+
+### Bug Fixes
+
+* do not rely on global pkl install ([ae10447](https://github.com/jonahsnider/pathflip/commit/ae10447deedaf0d996736f849d30e346e46f5ef2))
+
 ## [4.1.1](https://github.com/jonahsnider/pathflip/compare/pathflip@v4.1.0...pathflip@4.1.1) (2026-04-10)
 
 
