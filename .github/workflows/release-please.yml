@@ -6,6 +6,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write
 
 name: release-please
 
@@ -46,7 +47,7 @@ jobs:
         run: yarn run lint
         if: ${{ steps.release.outputs.release_created }}
       - name: Publish
-        run: npm publish
+        run: npm publish --provenance --access public
         if: ${{ steps.release.outputs.release_created }}
       - name: Install Pkl CLI
         if: ${{ steps.release.outputs.release_created }}
