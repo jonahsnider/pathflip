@@ -1,6 +1,8 @@
 import * as path from 'node:path';
+import { getExePath } from '@pkl-community/pkl';
+import * as pklTypescript from '@pkl-community/pkl-typescript';
 import { findUp } from 'find-up';
-import { loadFromPath } from './generated/pathflip_config.pkl.js';
+import { load } from './generated/pathflip_config.pkl.js';
 
 export type Config = {
 	fieldHeight: number;
@@ -19,16 +21,21 @@ export async function loadConfig(explicitPath: string | undefined, inputFile: st
 		);
 	}
 
-	const raw = await loadFromPath(path.resolve(configPath));
+	const evaluator = await pklTypescript.newEvaluatorWithCommand([getExePath()], pklTypescript.PreconfiguredOptions);
+	try {
+		const raw = await load(evaluator, pklTypescript.FileSource(path.resolve(configPath)));
 
-	const replacements =
-		raw.replacements instanceof Map
-			? raw.replacements
-			: (raw.replacements as unknown as { entries: Map<string, string> }).entries;
+		const replacements =
+			raw.replacements instanceof Map
+				? raw.replacements
+				: (raw.replacements as unknown as { entries: Map<string, string> }).entries;
 
-	return {
-		fieldHeight: raw.fieldHeight,
-		replacements: Object.fromEntries(replacements),
-		negateConstants: raw.negateConstants,
-	};
+		return {
+			fieldHeight: raw.fieldHeight,
+			replacements: Object.fromEntries(replacements),
+			negateConstants: raw.negateConstants,
+		};
+	} finally {
+		evaluator.close();
+	}
 }
