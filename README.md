@@ -35,6 +35,8 @@ pathflip src/main/java/com/team581/autos/RightIntegratedAuto.java
 Create a `pathflip.config.pkl` in your project root:
 
 ```pkl
+amends "package://pkg.pkl-lang.org/github.com/jonahsnider/pathflip/pathflip@4.0.3#/src/config.pkl"
+
 fieldHeight = 8.069
 
 replacements {
@@ -50,6 +52,8 @@ negateConstants {
   "BUMP_OFFSET"
 }
 ```
+
+The `amends` line is optional but recommended — it provides type checking and editor support via the published [Pkl package](https://github.com/jonahsnider/pathflip).
 
 | Key | Description |
 |-----|-------------|
