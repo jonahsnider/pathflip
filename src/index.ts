@@ -19,7 +19,8 @@ const cli = meow(
     $ pathflip <input-file> [--config path]
 
   ${pc.bold('Options')}
-    --config, -c  Path to pathflip.config.pkl (auto-discovered if omitted)
+    --config, -c   Path to pathflip.config.pkl (auto-discovered if omitted)
+    --version, -v  Show version number
 
   ${pc.bold('Examples')}
     $ pathflip src/main/java/com/team581/autos/RightIntegratedAuto.java
@@ -27,6 +28,7 @@ const cli = meow(
 `,
 	{
 		importMeta: import.meta,
+		argv: process.argv.slice(2).map((arg) => (arg === '-v' ? '--version' : arg)),
 		flags: {
 			config: {
 				type: 'string',
