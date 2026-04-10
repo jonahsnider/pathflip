@@ -42,9 +42,14 @@ export async function loadConfig(explicitPath: string | undefined, inputFile: st
 
 	const raw = await loadFromPath(path.resolve(configPath));
 
+	const replacements =
+		raw.replacements instanceof Map
+			? raw.replacements
+			: (raw.replacements as unknown as { entries: Map<string, string> }).entries;
+
 	return {
 		fieldHeight: raw.fieldHeight,
-		replacements: Object.fromEntries(raw.replacements),
+		replacements: Object.fromEntries(replacements),
 		negateConstants: raw.negateConstants,
 	};
 }
