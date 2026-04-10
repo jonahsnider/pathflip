@@ -1,5 +1,42 @@
 # Changelog
 
+## [4.0.0](https://github.com/jonahsnider/pathflip/compare/pathflip-v3.0.1...pathflip-v4.0.0) (2026-04-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* replace PathPlanner and Choreo support for Trailblazer
+* PathPlanner 2024 is no longer supported
+* support Choreo ([#13](https://github.com/jonahsnider/pathflip/issues/13))
+
+### Features
+
+* automatically notify when there are updates ([722a357](https://github.com/jonahsnider/pathflip/commit/722a357bd1d93a8714c35d27a565787e3ee6cf4e))
+* implement most of CLI interface ([9208c9e](https://github.com/jonahsnider/pathflip/commit/9208c9e3532860ee380b6ecbc25ffddf6d94b272))
+* replace PathPlanner and Choreo support for Trailblazer ([c02999b](https://github.com/jonahsnider/pathflip/commit/c02999b1b2270537a97785d5c4cc550e4500ce12))
+* support Choreo ([#13](https://github.com/jonahsnider/pathflip/issues/13)) ([e20da48](https://github.com/jonahsnider/pathflip/commit/e20da48f7c4ada1283e685d30ee487a638209012))
+* support PathPlanner 2025 ([62de10d](https://github.com/jonahsnider/pathflip/commit/62de10da4ea2dcc56cde4092eff5ed0aba2878ab))
+* update path and auto folders in PathPlanner settings file after transform ([d119f37](https://github.com/jonahsnider/pathflip/commit/d119f3728fddee95e49b80a320b56d7a164d1732))
+
+
+### Bug Fixes
+
+* add shebang to entrypoint ([f946f74](https://github.com/jonahsnider/pathflip/commit/f946f74a7cee86a1ab52bd9ce3c0e73eb8a713a6))
+* add warning about Node.js version on v20 ([1b76db4](https://github.com/jonahsnider/pathflip/commit/1b76db47de54422f6d2260ded7c75696c801fce6))
+* angle normalization for Choreo ([3541fd9](https://github.com/jonahsnider/pathflip/commit/3541fd9c0857e06a5d67e7637f1b5e551032f2f5))
+* bump version ([302bdf5](https://github.com/jonahsnider/pathflip/commit/302bdf527b0cb4b92f780805a04f27876d3e2b0c))
+* disable Biome nursery rules ([b6577ce](https://github.com/jonahsnider/pathflip/commit/b6577ce9f3f70a7596331a56dc3e9d0bc4fda7e4))
+* fix -pi angles not being normalized to pi in Choreo ([d43b7a1](https://github.com/jonahsnider/pathflip/commit/d43b7a17ea81f0cba9d98c4464e079ff653d3592))
+* fix headings facing wrong side after color transform ([e3ee148](https://github.com/jonahsnider/pathflip/commit/e3ee148f870000629b6d2b8ffa821d4fb7ddf892))
+* fix headings in Choreo causing unnecessary rotations ([#15](https://github.com/jonahsnider/pathflip/issues/15)) ([f08eae4](https://github.com/jonahsnider/pathflip/commit/f08eae4175235dc8951f767e3223a8a257b2715b))
+* fix how binary file is exported ([ab45bd4](https://github.com/jonahsnider/pathflip/commit/ab45bd498c8427d1a5e6be49210299964a51cbc8))
+* fix project file scan failing if no PathPlanner paths are detected ([9c441a5](https://github.com/jonahsnider/pathflip/commit/9c441a56d11c0e0823b2a22054652237f6bd8be4))
+* fix regular expression for formatting numbers in settings JSON ([f48f84c](https://github.com/jonahsnider/pathflip/commit/f48f84c3ca26988de69fd52d6069b4dc37eca140))
+* fix transformed PathPlanner paths having angles in radians instead of degrees ([998680e](https://github.com/jonahsnider/pathflip/commit/998680e5f654f95b742dd51aed534e59b87b6f3c))
+* fix version number in CLI ([ef8bee8](https://github.com/jonahsnider/pathflip/commit/ef8bee8fb758ced9af6540321c237033ec320a12))
+* handle non-integers in settings.json ([94afe83](https://github.com/jonahsnider/pathflip/commit/94afe836805100479b08add3a896239f3af4d5e1))
+* trigger release ([7dd4325](https://github.com/jonahsnider/pathflip/commit/7dd4325db245e5f243d14f22a46d7cad2b873221))
+
 ## [3.0.1](https://github.com/jonahsnider/pathflip/compare/v3.0.0...v3.0.1) (2025-01-17)
 
 
