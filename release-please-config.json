@@ -3,6 +3,7 @@
 	"packages": {
 		".": {
 			"include-component-in-tag": true,
+			"include-v-in-tag": false,
 			"release-type": "node",
 			"tag-separator": "@",
 			"extra-files": [
