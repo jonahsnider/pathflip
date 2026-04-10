@@ -1,5 +1,5 @@
-import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { findUp } from 'find-up';
 import { loadFromPath } from './generated/pathflip_config.pkl.js';
 
 export type Config = {
@@ -10,29 +10,8 @@ export type Config = {
 
 const CONFIG_FILENAME = 'pathflip.config.pkl';
 
-/** Walk up directories from `startDir` looking for `pathflip.config.pkl`. */
-function discoverConfigPath(startDir: string): string | undefined {
-	let dir = path.resolve(startDir);
-
-	while (true) {
-		const candidate = path.join(dir, CONFIG_FILENAME);
-
-		if (fs.existsSync(candidate)) {
-			return candidate;
-		}
-
-		const parent = path.dirname(dir);
-
-		if (parent === dir) {
-			return undefined;
-		}
-
-		dir = parent;
-	}
-}
-
 export async function loadConfig(explicitPath: string | undefined, inputFile: string): Promise<Config> {
-	const configPath = explicitPath ?? discoverConfigPath(path.dirname(path.resolve(inputFile)));
+	const configPath = explicitPath ?? (await findUp(CONFIG_FILENAME, { cwd: path.dirname(path.resolve(inputFile)) }));
 
 	if (!configPath) {
 		throw new Error(
