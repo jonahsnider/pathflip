@@ -676,12 +676,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:24.10.1":
-  version: 24.10.1
-  resolution: "@types/node@npm:24.10.1"
+"@types/node@npm:24.12.2":
+  version: 24.12.2
+  resolution: "@types/node@npm:24.12.2"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10c0/d6bca7a78f550fbb376f236f92b405d676003a8a09a1b411f55920ef34286ee3ee51f566203920e835478784df52662b5b2af89159d9d319352e9ea21801c002
+  checksum: 10c0/710050c42f89075c4479e4e1e4c2532486b0c41b1e2a8a13ad88641c88b88cdaea87414e19224f30028719737bd70e327edcaa184d50e86b9418941edd7eb02b
   languageName: node
   linkType: hard
 
@@ -1912,7 +1912,7 @@ __metadata:
     "@pkl-community/pkl-typescript": "npm:^0.0.17"
     "@tsconfig/node22": "npm:22.0.5"
     "@tsconfig/strictest": "npm:2.0.8"
-    "@types/node": "npm:24.10.1"
+    "@types/node": "npm:24.12.2"
     "@types/update-notifier": "npm:6.0.8"
     find-up: "npm:^8.0.0"
     meow: "npm:14.1.0"
