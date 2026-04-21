@@ -51,7 +51,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - name: Install Pkl CLI
         if: ${{ steps.release.outputs.release_created }}
-        uses: pkl-community/setup-pkl@v0
+        uses: pkl-community/setup-pkl@5bb6ac805eb51
         with:
           pkl-version: 0.31.1
       - name: Build Pkl package
