@@ -16,13 +16,94 @@ function round3(value: number): number {
 	return Number(value.toFixed(3));
 }
 
-/** Rule 1: Flip Pose2d Y-coordinates. `y' = fieldHeight - y` */
+/**
+ * Rule 1: Flip Pose2d Y-coordinates.
+ *
+ * Handles two forms of the Y argument:
+ *   - Bare numeric literal:        `y' = fieldHeight - y`
+ *   - Literal + offset expression: `H - (lit + expr) = (H - lit) - expr`
+ *                                  `H - (lit - expr) = (H - lit) + expr`
+ *
+ * In the offset form, the operator immediately following the literal is flipped
+ * and the trailing expression is left untouched (it can be a named constant,
+ * a function call like `Units.inchesToMeters(3)`, or another numeric literal).
+ *
+ * The Y argument is parsed up to the top-level comma that ends it; nested
+ * parentheses inside the offset expression are tracked.
+ */
 function flipPose2dY(source: string, fieldHeight: number): string {
-	return source.replace(/new\s+Pose2d\(([\d.]+),\s*([\d.]+)/g, (_match, xStr: string, yStr: string) => {
-		const y = Number(yStr);
-		const newY = round3(fieldHeight - y);
-		return `new Pose2d(${xStr}, ${newY}`;
-	});
+	const marker = /new\s+Pose2d\(/g;
+	let result = '';
+	let lastIndex = 0;
+
+	for (let match = marker.exec(source); match !== null; match = marker.exec(source)) {
+		const argsStart = match.index + match[0].length;
+
+		// Append everything up to and including `new Pose2d(`
+		result += source.slice(lastIndex, argsStart);
+		lastIndex = argsStart;
+
+		// Parse the X arg: a numeric literal followed by `,`. If we don't see
+		// that exact shape, leave the call alone (preserves current behavior
+		// for non-literal X).
+		const xMatch = source.slice(argsStart).match(/^([\d.]+)\s*,\s*/);
+		if (!xMatch) {
+			continue;
+		}
+		const xStr = xMatch[1] as string;
+		const afterX = argsStart + xMatch[0].length;
+
+		// Parse the Y arg: starts with a numeric literal.
+		const yLitMatch = source.slice(afterX).match(/^([\d.]+)/);
+		if (!yLitMatch) {
+			continue;
+		}
+		const yLitStr = yLitMatch[1] as string;
+		const yLit = Number(yLitStr);
+		const flippedYLit = round3(fieldHeight - yLit);
+		const cursor = afterX + yLitStr.length;
+
+		// Look at what follows the literal: whitespace, then either `,` (end of
+		// Y arg, plain literal case) or `+`/`-` (offset case).
+		const tail = source.slice(cursor);
+		const opMatch = tail.match(/^(\s*)([,+-])/);
+		if (!opMatch) {
+			// Malformed; leave alone.
+			continue;
+		}
+		const ws = opMatch[1] as string;
+		const opChar = opMatch[2] as string;
+
+		if (opChar === ',') {
+			// Plain literal Y. Replace just the literal.
+			result += `${xStr}, ${flippedYLit}`;
+			lastIndex = cursor;
+			continue;
+		}
+
+		// Offset form: `<lit> [+-] <expr>`. Walk forward through the expression
+		// tracking paren depth until we hit a top-level `,` or `)`.
+		const exprStart = cursor + ws.length + 1; // past the operator
+		let depth = 0;
+		let exprEnd = exprStart;
+		for (; exprEnd < source.length; exprEnd++) {
+			const ch = source[exprEnd];
+			if (ch === '(') depth++;
+			else if (ch === ')') {
+				if (depth === 0) break;
+				depth--;
+			} else if (ch === ',' && depth === 0) {
+				break;
+			}
+		}
+		const exprText = source.slice(exprStart, exprEnd);
+		const flippedOp = opChar === '+' ? '-' : '+';
+		result += `${xStr}, ${flippedYLit} ${flippedOp}${exprText}`;
+		lastIndex = exprEnd;
+	}
+
+	result += source.slice(lastIndex);
+	return result;
 }
 
 /** Rule 2: Negate Rotation2d.fromDegrees arguments. */

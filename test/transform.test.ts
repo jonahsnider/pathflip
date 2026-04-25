@@ -34,6 +34,37 @@ describe('transform', () => {
 			const { output } = transform(input, { ...baseConfig, replacements: {}, negateConstants: [] });
 			expect(output).toBe('new Pose2d(1.0, 5, r)');
 		});
+
+		test('flips literal Y plus a named offset constant', () => {
+			const input = 'new Pose2d(10.2, 5.4 + BUMP_OFFSET, Rotation2d.kZero)';
+			const { output } = transform(input, { ...baseConfig, replacements: {}, negateConstants: [] });
+			expect(output).toBe('new Pose2d(10.2, 2.669 - BUMP_OFFSET, Rotation2d.kZero)');
+		});
+
+		test('flips literal Y minus a named offset constant', () => {
+			const input = 'new Pose2d(10.2, 5.4 - BUMP_OFFSET, Rotation2d.kZero)';
+			const { output } = transform(input, { ...baseConfig, replacements: {}, negateConstants: [] });
+			expect(output).toBe('new Pose2d(10.2, 2.669 + BUMP_OFFSET, Rotation2d.kZero)');
+		});
+
+		test('flips literal Y plus a function call offset (with nested parens)', () => {
+			const input = 'new Pose2d(10.2, 5.4 + Units.inchesToMeters(3), Rotation2d.kZero)';
+			const { output } = transform(input, { ...baseConfig, replacements: {}, negateConstants: [] });
+			expect(output).toBe('new Pose2d(10.2, 2.669 - Units.inchesToMeters(3), Rotation2d.kZero)');
+		});
+
+		test('flips literal Y minus a function call offset', () => {
+			const input = 'new Pose2d(10.2, 5.4 - Units.inchesToMeters(3), Rotation2d.kZero)';
+			const { output } = transform(input, { ...baseConfig, replacements: {}, negateConstants: [] });
+			expect(output).toBe('new Pose2d(10.2, 2.669 + Units.inchesToMeters(3), Rotation2d.kZero)');
+		});
+
+		test('idempotent: applying twice on offset form returns original', () => {
+			const original = 'new Pose2d(10.2, 5.4 + BUMP_OFFSET, Rotation2d.kZero)';
+			const { output: once } = transform(original, { ...baseConfig, replacements: {}, negateConstants: [] });
+			const { output: twice } = transform(once, { ...baseConfig, replacements: {}, negateConstants: [] });
+			expect(twice).toBe(original);
+		});
 	});
 
 	describe('rule 2: Rotation2d.fromDegrees negation', () => {
