@@ -3,7 +3,7 @@
 /// Usage:
 ///
 /// ```pkl
-/// amends "package://pkg.pkl-lang.org/github.com/jonahsnider/pathflip/pathflip@4.1.2#/src/config.pkl" // x-release-please-version
+/// amends "package://pkg.pkl-lang.org/github.com/jonahsnider/pathflip/pathflip@4.1.3#/src/config.pkl" // x-release-please-version
 ///
 /// fieldHeight = 8.052
 ///
