@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.3](https://github.com/jonahsnider/pathflip/compare/pathflip@4.1.2...pathflip@4.1.3) (2026-04-25)
+
+
+### Bug Fixes
+
+* mirror operator when Pose2d Y is `<literal> ± <expr>` ([f6f9d8d](https://github.com/jonahsnider/pathflip/commit/f6f9d8da79fdf7330a75c921424180ad87fdf6e5))
+
 ## [4.1.2](https://github.com/jonahsnider/pathflip/compare/pathflip@4.1.1...pathflip@4.1.2) (2026-04-10)
 
 
