@@ -45,7 +45,7 @@
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.13.3",
 		"@types/update-notifier": "6.0.8",
-		"typescript": "6.0.3",
+		"typescript": "7.0.2",
 		"vitest": "4.1.10"
 	},
 	"packageManager": "yarn@4.17.1",
