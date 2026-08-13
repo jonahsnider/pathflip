@@ -36,7 +36,6 @@
 		"@pkl-community/pkl-typescript": "^0.0.17",
 		"find-up": "^8.0.0",
 		"meow": "14.1.0",
-		"picocolors": "1.1.1",
 		"update-notifier": "7.3.1"
 	},
 	"devDependencies": {

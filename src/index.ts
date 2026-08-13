@@ -2,9 +2,9 @@
 
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
+import { styleText } from 'node:util';
 import { multiReplace } from '@jonahsnider/util';
 import meow from 'meow';
-import pc from 'picocolors';
 import updateNotifier from 'update-notifier';
 import pkg from '../package.json' with { type: 'json' };
 import { loadConfig } from './config.js';
@@ -15,14 +15,14 @@ notifier.notify({ defer: true });
 
 const cli = meow(
 	`
-  ${pc.bold('Usage')}
+  ${styleText('bold', 'Usage')}
     $ pathflip <input-file> [--config path]
 
-  ${pc.bold('Options')}
+  ${styleText('bold', 'Options')}
     --config, -c   Path to pathflip.config.pkl (auto-discovered if omitted)
     --version, -v  Show version number
 
-  ${pc.bold('Examples')}
+  ${styleText('bold', 'Examples')}
     $ pathflip src/main/java/com/team581/autos/RightIntegratedAuto.java
     $ pathflip RightAuto.java --config ./pathflip.config.pkl
 `,
@@ -52,7 +52,7 @@ let source: string;
 try {
 	source = await fs.readFile(inputPath, 'utf-8');
 } catch {
-	console.error(pc.red(`File not found: ${inputPath}`));
+	console.error(styleText('red', `File not found: ${inputPath}`, { stream: process.stderr }));
 	process.exit(1);
 }
 
@@ -60,14 +60,18 @@ const config = await loadConfig(cli.flags.config, inputPath);
 const { output, warnings } = transform(source, config);
 
 for (const warning of warnings) {
-	console.error(pc.yellow(`Warning: ${warning.message}`));
+	console.error(styleText('yellow', `Warning: ${warning.message}`, { stream: process.stderr }));
 }
 
 // Derive output path by applying replacements to the full path
 const outputPath = multiReplace(inputPath, config.replacements);
 
 if (outputPath === inputPath) {
-	console.error(pc.red('Output path is the same as input path. Check your replacements config.'));
+	console.error(
+		styleText('red', 'Output path is the same as input path. Check your replacements config.', {
+			stream: process.stderr,
+		}),
+	);
 	process.exit(1);
 }
 
@@ -76,5 +80,5 @@ await fs.mkdir(path.dirname(outputPath), { recursive: true });
 await fs.writeFile(outputPath, output);
 
 console.log(
-	`${pc.green('✔')} ${path.relative(process.cwd(), inputPath)} → ${path.relative(process.cwd(), outputPath)}`,
+	`${styleText('green', '✔')} ${path.relative(process.cwd(), inputPath)} → ${path.relative(process.cwd(), outputPath)}`,
 );
