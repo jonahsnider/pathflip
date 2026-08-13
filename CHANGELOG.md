@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.4](https://github.com/jonahsnider/pathflip/compare/pathflip@4.1.3...pathflip@4.1.4) (2026-08-13)
+
+
+### Performance Improvements
+
+* remove picocolors dependency ([ce63dc3](https://github.com/jonahsnider/pathflip/commit/ce63dc3b976b10087fb0eb4f4f638279d4582bd5))
+
 ## [4.1.3](https://github.com/jonahsnider/pathflip/compare/pathflip@4.1.2...pathflip@4.1.3) (2026-04-25)
 
 
