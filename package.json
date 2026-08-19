@@ -45,7 +45,7 @@
 		"@types/node": "24.13.3",
 		"@types/update-notifier": "6.0.8",
 		"typescript": "7.0.2",
-		"vitest": "4.1.10"
+		"vitest": "4.1.11"
 	},
 	"packageManager": "yarn@4.18.0",
 	"engines": {
