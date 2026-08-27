@@ -47,8 +47,15 @@
 		"typescript": "7.0.2",
 		"vitest": "4.1.11"
 	},
-	"packageManager": "yarn@4.18.0",
+	"packageManager": "pnpm@12.0.0",
 	"engines": {
 		"node": ">=22.0.0"
+	},
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": "24.x",
+			"onFail": "error"
+		}
 	}
 }
