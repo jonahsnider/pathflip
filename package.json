@@ -4,52 +4,48 @@
 	"bugs": {
 		"url": "https://github.com/jonahsnider/pathflip/issues"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/jonahsnider/pathflip.git"
-	},
 	"license": "Apache-2.0",
 	"author": {
 		"name": "Jonah Snider",
 		"email": "jonah@jonahsnider.com",
 		"url": "https://jonahsnider.com"
 	},
-	"type": "module",
-	"main": "./dist/src/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jonahsnider/pathflip.git"
+	},
 	"bin": {
-		"pathflip": "dist/src/index.js"
+		"pathflip": "dist/src/index.mjs"
 	},
 	"files": [
 		"dist",
 		"!dist/test"
 	],
+	"type": "module",
+	"main": "./dist/src/index.mjs",
 	"scripts": {
-		"build": "rm -rf dist && tsc",
-		"lint": "biome check .",
-		"lint:fix": "biome check . --write --unsafe",
+		"build": "vp pack",
+		"knip": "knip",
+		"prepare": "vp config",
 		"start": "node .",
-		"test": "vitest"
+		"test": "vp test"
 	},
 	"dependencies": {
 		"@jonahsnider/util": "13.0.0",
-		"@pkl-community/pkl": "^0.30.2",
-		"@pkl-community/pkl-typescript": "^0.0.17",
-		"find-up": "^8.0.0",
+		"@pkl-community/pkl": "0.30.2",
+		"@pkl-community/pkl-typescript": "0.0.17",
+		"find-up": "8.0.0",
 		"meow": "14.1.0",
 		"update-notifier": "7.3.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.14",
-		"@tsconfig/node24": "24.0.5",
+		"@tsconfig/recommended": "1.0.13",
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.13.6",
 		"@types/update-notifier": "6.0.8",
-		"typescript": "7.0.2",
-		"vitest": "5.0.1"
-	},
-	"packageManager": "pnpm@12.5.1",
-	"engines": {
-		"node": ">=22.0.0"
+		"knip": "6.37.0",
+		"vite": "catalog:",
+		"vite-plus": "catalog:"
 	},
 	"devEngines": {
 		"runtime": {
@@ -57,5 +53,9 @@
 			"version": "24.x",
 			"onFail": "warn"
 		}
-	}
+	},
+	"engines": {
+		"node": ">=22.0.0"
+	},
+	"packageManager": "pnpm@12.5.1"
 }

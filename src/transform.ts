@@ -2,7 +2,7 @@ import { multiReplace } from '@jonahsnider/util';
 import { angleModulusDegrees } from './common/math-util.js';
 import type { Config } from './config.js';
 
-export type TransformWarning = {
+type TransformWarning = {
 	message: string;
 };
 

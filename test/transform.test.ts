@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test } from 'vite-plus/test';
 import type { Config } from '../src/config.js';
 import { transform } from '../src/transform.js';
 
@@ -61,8 +61,16 @@ describe('transform', () => {
 
 		test('idempotent: applying twice on offset form returns original', () => {
 			const original = 'new Pose2d(10.2, 5.4 + BUMP_OFFSET, Rotation2d.kZero)';
-			const { output: once } = transform(original, { ...baseConfig, replacements: {}, negateConstants: [] });
-			const { output: twice } = transform(once, { ...baseConfig, replacements: {}, negateConstants: [] });
+			const { output: once } = transform(original, {
+				...baseConfig,
+				replacements: {},
+				negateConstants: [],
+			});
+			const { output: twice } = transform(once, {
+				...baseConfig,
+				replacements: {},
+				negateConstants: [],
+			});
 			expect(twice).toBe(original);
 		});
 	});
@@ -100,7 +108,11 @@ describe('transform', () => {
 
 		test('leaves unrecognized expressions unchanged and warns', () => {
 			const input = 'Rotation2d.fromDegrees(someVar * 2)';
-			const { output, warnings } = transform(input, { ...baseConfig, replacements: {}, negateConstants: [] });
+			const { output, warnings } = transform(input, {
+				...baseConfig,
+				replacements: {},
+				negateConstants: [],
+			});
 			expect(output).toBe('Rotation2d.fromDegrees(someVar * 2)');
 			expect(warnings).toHaveLength(1);
 			expect(warnings[0]?.message).toContain('Unrecognized expression');

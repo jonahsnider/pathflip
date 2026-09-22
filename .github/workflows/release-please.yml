@@ -26,19 +26,16 @@ jobs:
         # a new release is created:
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v7
-      - name: Setup pnpm
-        uses: pnpm/setup@v3
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
         with:
           cache: true
         if: ${{ steps.release.outputs.release_created }}
-      - name: Build
-        run: pnpm run build
-        if: ${{ steps.release.outputs.release_created }}
-      - name: Lint
-        run: pnpm run lint
+      - name: Pack
+        run: vp pack
         if: ${{ steps.release.outputs.release_created }}
       - name: Publish
-        run: npm publish --provenance --access public
+        run: pnpm publish --provenance --access public
         if: ${{ steps.release.outputs.release_created }}
       - name: Install Pkl CLI
         if: ${{ steps.release.outputs.release_created }}

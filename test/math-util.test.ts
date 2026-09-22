@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test } from 'vite-plus/test';
 import { angleModulusDegrees, angleModulusRadians } from '../src/common/math-util.js';
 
 describe('math util angle normalization', () => {
