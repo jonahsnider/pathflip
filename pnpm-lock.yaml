@@ -210,8 +210,8 @@ importers:
         specifier: 6.0.8
         version: 6.0.8
       knip:
-        specifier: 6.37.0
-        version: 6.37.0
+        specifier: 6.38.0
+        version: 6.38.0
       vite:
         specifier: 'catalog:'
         version: '@voidzero-dev/vite-plus-core@0.3.3(@types/node@24.13.6)(jiti@2.7.0)(typescript@7.0.2)(yaml@2.9.1)'
@@ -1518,8 +1518,8 @@ packages:
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
-  knip@6.37.0:
-    resolution: {integrity: sha512-NKCYuoGKJ+o2AuoCuV1mDvfMYnSSWfDXqxwmzxeHyd8fftjNRl8TBUg3fbSrtJjhm7Vj6sc1PX3WZnZhECs9EQ==}
+  knip@6.38.0:
+    resolution: {integrity: sha512-umytiMCaZf02MV9SOO1FEDgbDf6h20VZk3ruJE0kh52kkGjYZFRUAXHJWYoLhvhoHGINO/7GXVJmQ2vxTBvl6A==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -2834,7 +2834,7 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
-  knip@6.37.0:
+  knip@6.38.0:
     dependencies:
       fdir: 6.5.0(picomatch@4.0.7)
       formatly: 0.7.1
