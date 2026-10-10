@@ -43,7 +43,7 @@
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.19.1",
 		"@types/update-notifier": "6.0.8",
-		"knip": "6.40.0",
+		"knip": "6.41.0",
 		"vite": "catalog:",
 		"vite-plus": "catalog:"
 	},
