@@ -238,6 +238,9 @@ $RECYCLE.BIN/
 
 # Yarn
 .pnp.*
+
+# Pkl language server state
+.pkl-lsp/
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
