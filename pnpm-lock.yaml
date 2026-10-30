@@ -207,8 +207,8 @@ importers:
         specifier: 26.6.6
         version: 26.6.6
       '@types/update-notifier':
-        specifier: 6.0.8
-        version: 6.0.8
+        specifier: 6.0.9
+        version: 6.0.9
       knip:
         specifier: 6.43.0
         version: 6.43.0
@@ -888,8 +888,8 @@ packages:
   '@types/node@26.6.6':
     resolution: {integrity: sha512-MzQj+8Kx3XI40OmUAE6Qoh58ZMNstNNMwn2nfd3qWsfe7nDNSqJNzes4njhz6AHwrSHOffSLwXU6yb474Q4aog==}
 
-  '@types/update-notifier@6.0.8':
-    resolution: {integrity: sha512-IlDFnfSVfYQD+cKIg63DEXn3RFmd7W1iYtKQsJodcHK9R1yr8aKbKaPKfBxzPpcHCq2DU8zUq4PIPmy19Thjfg==}
+  '@types/update-notifier@6.0.9':
+    resolution: {integrity: sha512-10lRzgXVppJdo7f8WgPnp1z25QrdLlNQpUzw0uJqqOVyGAn6t9F3yEKlLdDcn75iIADDXfXNJXXkJWe3eExsEg==}
 
   '@typescript/typescript-aix-ppc64@7.0.2':
     resolution: {integrity: sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ==}
@@ -2347,7 +2347,7 @@ snapshots:
     dependencies:
       undici-types: 8.9.0
 
-  '@types/update-notifier@6.0.8':
+  '@types/update-notifier@6.0.9':
     dependencies:
       '@types/configstore': 6.0.2
       boxen: 7.1.1
