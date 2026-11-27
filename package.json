@@ -41,7 +41,7 @@
 	"devDependencies": {
 		"@tsconfig/recommended": "1.0.14",
 		"@tsconfig/strictest": "2.0.9",
-		"@types/node": "26.6.10",
+		"@types/node": "26.6.11",
 		"@types/update-notifier": "6.0.9",
 		"knip": "6.48.0",
 		"vite": "catalog:",
